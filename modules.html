@@ -1,149 +1,449 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>المحاور التعليمية | أكاديمية الأصول الرقمية</title>
-<meta name="description" content="أربع محاور تعليمية متكاملة: هندسة الإقناع، أساسيات البلوكشين، حماية المحافظ، والتشريعات الدولية.">
-<meta name="robots" content="index, follow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-:root{--bg:#FAF7F2;--bg2:#EFECE6;--text:#3A3A3A;--accent:#4A7C59;--accent-hover:#3b6347;--accent-light:rgba(74,124,89,0.09);--card:#ffffff;--muted:#666;}
-*{box-sizing:border-box;margin:0;padding:0;font-family:'Tajawal',sans-serif;}
-body{background:var(--bg);color:var(--text);line-height:1.8;}
-.site-nav{position:sticky;top:0;z-index:100;background:rgba(250,247,242,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--bg2);padding:0 24px;}
-.nav-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;}
-.nav-logo{display:flex;align-items:center;gap:9px;font-size:16px;font-weight:700;color:var(--accent);text-decoration:none;}
-.nav-logo i{font-size:20px;}
-.nav-links{display:flex;align-items:center;gap:22px;}
-.nav-links a{font-size:13.5px;color:var(--muted);text-decoration:none;transition:color .2s;}
-.nav-links a:hover,.nav-links a.active{color:var(--accent);}
-.nav-cta{background:var(--accent);color:#fff;padding:8px 18px;border-radius:8px;font-size:13.5px;font-weight:700;text-decoration:none;transition:background .2s;}
-.nav-cta:hover{background:var(--accent-hover);}
-.page-body{padding:40px 20px;}
-.container{max-width:900px;margin:0 auto;}
-.page-header{text-align:center;margin-bottom:50px;}
-.page-header h1{font-size:2.3rem;font-weight:700;margin-bottom:15px;}
-.page-header p{color:var(--muted);font-size:1.1rem;}
-.module-card{display:flex;align-items:center;gap:20px;background:var(--card);border:1px solid var(--bg2);border-radius:14px;padding:28px;margin-bottom:18px;text-decoration:none;color:var(--text);transition:all .3s;box-shadow:0 2px 5px rgba(0,0,0,0.01);}
-.module-card:hover{transform:translateY(-4px);box-shadow:0 10px 25px rgba(74,124,89,0.07);border-color:var(--accent);}
-.module-icon{width:60px;height:60px;border-radius:14px;background:var(--accent-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.module-icon i{font-size:1.7rem;color:var(--accent);}
-.module-info{flex:1;}
-.module-info h3{font-size:1.25rem;font-weight:700;margin-bottom:6px;}
-.module-info p{font-size:.95rem;color:var(--muted);}
-.module-arrow{font-size:1.2rem;color:#ccc;transition:transform .2s,color .2s;}
-.module-card:hover .module-arrow{transform:translateX(-5px);color:var(--accent);}
-.site-footer{background:#F0EDE7;border-top:1px solid var(--bg2);padding:50px 20px 20px;margin-top:60px;}
-.footer-inner{max-width:1140px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px;margin-bottom:30px;}
-.footer-brand{flex:1;min-width:260px;}
-.footer-logo{display:flex;align-items:center;gap:9px;font-size:18px;font-weight:700;color:var(--accent);margin-bottom:12px;}
-.footer-logo i{font-size:22px;}
-.footer-desc{font-size:13px;color:var(--muted);line-height:1.7;max-width:340px;}
-.footer-links{display:flex;gap:40px;flex-wrap:wrap;}
-.link-group{min-width:140px;}
-.group-title{font-size:14px;font-weight:700;margin-bottom:14px;}
-.link-group ul{list-style:none;}
-.link-group ul li{margin-bottom:10px;}
-.link-group ul li a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .3s;}
-.link-group ul li a:hover{color:var(--accent);}
-.footer-bottom{max-width:1140px;margin:0 auto;padding-top:20px;border-top:1px solid var(--bg2);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;font-size:12px;color:#999;gap:10px;}
-.footer-badge{background:var(--accent-light);color:var(--accent);padding:4px 12px;border-radius:50px;font-size:11px;font-weight:700;}
-@media(max-width:768px){.nav-links{display:none;}.module-card{flex-direction:column;text-align:center;}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>المحاور التعليمية والمناهج المعرفية | أكاديمية الأصول الرقمية</title>
+    <meta name="description" content="استكشف مناهجنا التعليمية المتكاملة لحماية الأصول الرقمية: سيكولوجية هندسة الإقناع، فحص عقود البلوكشين الذكية، هندسة تأمين المحافظ، والتشريعات والرقابة الدولية الفعالة.">
+    <meta name="keywords" content="مناهج البلوكشين، هندسة الإقناع، تفكيك سيكولوجية الاحتيال، تأمين المحافظ الرقمية، تراخيص الأوفشور، أمان الويب 3">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://majdabdelaziz.github.io/digital-assets-academy/modules.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="المحاور التعليمية والمناهج المعرفية | أكاديمية الأصول الرقمية">
+    <meta property="og:description" content="أربعة محاور تخصصية مصممة لتسليح المستثمر العربي بالوعي التقني والنفسي اللازمين لكشف فخاخ الاحتيال الرقمي.">
+    <meta property="og:url" content="https://majdabdelaziz.github.io/digital-assets-academy/modules.html">
+    <meta property="og:image" content="https://majdabdelaziz.github.io/digital-assets-academy/assets/images/seo-preview.jpg">
+    <meta property="og:locale" content="ar_AR">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg: #FAF7F2;
+            --bg2: #EFECE6;
+            --text: #3A3A3A;
+            --accent: #4A7C59;
+            --accent-hover: #3b6347;
+            --accent-light: rgba(74, 124, 89, 0.09);
+            --card: #ffffff;
+            --muted: #666;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+        }
+        
+        /* الناف بار والملاحة */
+        .site-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(250, 247, 242, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--bg2);
+            padding: 0 24px;
+        }
+        .nav-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .nav-logo i {
+            font-size: 22px;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color .2s;
+            font-weight: 500;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent);
+        }
+        .nav-cta {
+            background: var(--accent);
+            color: #fff;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background .2s;
+        }
+        .nav-cta:hover {
+            background: var(--accent-hover);
+        }
+
+        /* محتوى الصفحة الرئيسي */
+        .page-body {
+            padding: 60px 20px;
+        }
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .page-header h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+        .page-header p {
+            color: var(--muted);
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* كروت المحاور المنهجية المطورة */
+        .modules-list {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+        .module-card {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            background: var(--card);
+            border: 1px solid var(--bg2);
+            border-radius: 16px;
+            padding: 32px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all .35s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.01);
+        }
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(74, 124, 89, 0.08);
+            border-color: var(--accent);
+        }
+        .module-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 16px;
+            background: var(--accent-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all .3s;
+        }
+        .module-card:hover .module-icon {
+            background: var(--accent);
+        }
+        .module-icon i {
+            font-size: 2rem;
+            color: var(--accent);
+            transition: color .3s;
+        }
+        .module-card:hover .module-icon i {
+            color: #fff;
+        }
+        .module-info {
+            flex: 1;
+        }
+        .module-info h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text);
+            transition: color .2s;
+        }
+        .module-card:hover .module-info h2 {
+            color: var(--accent);
+        }
+        .module-info p {
+            font-size: 1rem;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+        
+        /* مؤشرات المنهج وبيانات الـ SEO الصامتة */
+        .module-meta {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+            color: #777;
+            font-weight: 500;
+        }
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg);
+            padding: 4px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--bg2);
+        }
+        .meta-item i {
+            color: var(--accent);
+        }
+
+        .module-arrow {
+            font-size: 1.4rem;
+            color: #ccc;
+            transition: transform .3s, color .3s;
+            padding-right: 10px;
+        }
+        .module-card:hover .module-arrow {
+            transform: translateX(-8px);
+            color: var(--accent);
+        }
+
+        /* الفوتر والأسفل */
+        .site-footer {
+            background: #F0EDE7;
+            border-top: 1px solid var(--bg2);
+            padding: 60px 20px 20px;
+            margin-top: 80px;
+        }
+        .footer-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand {
+            flex: 1.5;
+            min-width: 280px;
+        }
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        .footer-logo i {
+            font-size: 24px;
+        }
+        .footer-desc {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.8;
+            max-width: 380px;
+        }
+        .footer-links {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+            flex: 1;
+            justify-content: flex-end;
+        }
+        .link-group {
+            min-width: 150px;
+        }
+        .group-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+        .link-group ul {
+            list-style: none;
+        }
+        .link-group ul li {
+            margin-bottom: 12px;
+        }
+        .link-group ul li a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color .3s;
+        }
+        .link-group ul li a:hover {
+            color: var(--accent);
+        }
+        .footer-bottom {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid var(--bg2);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #888;
+            gap: 10px;
+        }
+        .footer-badge {
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        @media(max-width:768px) {
+            .nav-links { display:none; }
+            .module-card { flex-direction: column; text-align: center; padding: 25px; gap: 15px; }
+            .module-info p { text-align: center; }
+            .module-meta { justify-content: center; flex-wrap: wrap; }
+            .module-arrow { transform: rotate(-90deg); padding: 0; margin-top: 5px; }
+            .module-card:hover .module-arrow { transform: rotate(-90deg) translateY(5px); }
+            .page-header h1 { font-size: 2.1rem; }
+            .footer-links { justify-content: flex-start; }
+        }
+    </style>
 </head>
 <body>
 
 <nav class="site-nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><i class="fa-solid fa-graduation-cap"></i> أكاديمية الأصول الرقمية</a>
-    <div class="nav-links">
-      <a href="index.html">الرئيسية</a>
-      <a href="simulator.html">محاكي النصب</a>
-      <a href="modules.html" class="active">المحاور التعليمية</a>
-      <a href="blog.html">المدونة</a>
-      <a href="join.html">انضم إلينا</a>
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo" aria-label="أكاديمية الأصول الرقمية الصفحة الرئيسية">
+            <i class="fa-solid fa-graduation-cap"></i> أكاديمية الأصول الرقمية
+        </a>
+        <div class="nav-links">
+            <a href="index.html">الرئيسية</a>
+            <a href="simulator.html">محاكي النصب</a>
+            <a href="modules.html" class="active">المحاور التعليمية</a>
+            <a href="blog.html">المدونة</a>
+            <a href="join.html">انضم إلينا</a>
+        </div>
+        <a href="join.html" class="nav-cta">ابدأ التعلم مجاناً</a>
     </div>
-    <a href="join.html" class="nav-cta">ابدأ التعلم</a>
-  </div>
 </nav>
 
-<div class="page-body">
+<main class="page-body">
 <div class="container">
     <header class="page-header">
-        <h1>المحاور والوحدات التعليمية</h1>
-        <p>اضغط على أي محور لاستكشاف التفاصيل والمنهج المعرفي للوقاية من الاحتيال.</p>
+        <h1>المحاور والوحدات التعليمية التخصصية</h1>
+        <p>منهج علمي مبني على تفكيك الهندسة الاجتماعية وتحليل المعطيات على السلسلة لتمكين المستثمرين من اتخاذ قرارات آمنة ومدروسة.</p>
     </header>
 
-    <a href="modules/persuasion.html" class="module-card">
-        <div class="module-icon"><i class="fa-solid fa-brain"></i></div>
-        <div class="module-info">
-            <h3>المحور الأول: هندسة الإقناع</h3>
-            <p>دروس سيكولوجية لتفكيك آليات الإقناع التي يستغلها المحتالون لإسقاط الضحايا.</p>
-        </div>
-        <i class="fa-solid fa-chevron-left module-arrow"></i>
-    </a>
+    <div class="modules-list">
+        <a href="modules/persuasion.html" class="module-card" aria-label="المحور الأول: هندسة الإقناع وسيكولوجية الاحتيال">
+            <div class="module-icon"><i class="fa-solid fa-brain" aria-hidden="true"></i></div>
+            <div class="module-info">
+                <h2>المحور الأول: هندسة الإقناع وتفكيك سيكولوجية الاحتيال</h2>
+                <p>دراسة معمقة في الأساليب النفسية والضغط العاطفي الذي يستغله منتحلو صفة شركات التداول. تعرّف على فخاخ "الربح السريع الوشيك" وآليات التلاعب بالثقة لبناء جدار صد نفسي منيع ضد الخداع الابتزازي.</p>
+                <div class="module-meta">
+                    <span class="meta-item"><i class="fa-regular fa-file-lines"></i> ٥ وحدات دراسية</span>
+                    <span class="meta-item"><i class="fa-regular fa-clock"></i> ساعتان ونصف</span>
+                    <span class="meta-item"><i class="fa-solid fa-layer-group"></i> مستوى أساسي</span>
+                </div>
+            </div>
+            <i class="fa-solid fa-chevron-left module-arrow" aria-hidden="true"></i>
+        </a>
 
-    <a href="modules/blockchain.html" class="module-card">
-        <div class="module-icon"><i class="fa-solid fa-cubes"></i></div>
-        <div class="module-info">
-            <h3>المحور الثاني: أساسيات البلوكشين الرقمي</h3>
-            <p>تعلّم قراءة بيانات الشبكة وفحص العقود الذكية المفخخة قبل الموافقة عليها.</p>
-        </div>
-        <i class="fa-solid fa-chevron-left module-arrow"></i>
-    </a>
+        <a href="modules/blockchain.html" class="module-card" aria-label="المحور الثاني: أساسيات البلوكشين وتحليل البيانات على السلسلة">
+            <div class="module-icon"><i class="fa-solid fa-cubes" aria-hidden="true"></i></div>
+            <div class="module-info">
+                <h2>المحور الثاني: أساسيات البلوكشين وتحليل السلسلة (On-Chain)</h2>
+                <p>انتقل من المفهوم السطحي إلى قراءة بيانات الشبكة الحقيقية. تعلّم تتبع المعاملات عبر المستكشفين (Explorers)، وفحص العقود الذكية (Smart Contracts) لكشف برمجيات الخبيثة المخصصة لسحب سيولة المحافظ تلقائياً.</p>
+                <div class="module-meta">
+                    <span class="meta-item"><i class="fa-regular fa-file-lines"></i> ٦ وحدات دراسية</span>
+                    <span class="meta-item"><i class="fa-regular fa-clock"></i> ٣ ساعات ونصف</span>
+                    <span class="meta-item"><i class="fa-solid fa-layer-group"></i> مستوى متوسط</span>
+                </div>
+            </div>
+            <i class="fa-solid fa-chevron-left module-arrow" aria-hidden="true"></i>
+        </a>
 
-    <a href="modules/wallets.html" class="module-card">
-        <div class="module-icon"><i class="fa-solid fa-shield-halved"></i></div>
-        <div class="module-info">
-            <h3>المحور الثالث: تأمين المحافظ الرقمية</h3>
-            <p>الفرق بين المحافظ الساخنة والباردة، وقواعد حماية عبارة الاستعادة (Seed Phrase).</p>
-        </div>
-        <i class="fa-solid fa-chevron-left module-arrow"></i>
-    </a>
+        <a href="modules/wallets.html" class="module-card" aria-label="المحور الثالث: هندسة تأمين المحافظ وحماية المفاتيح الخاصة">
+            <div class="module-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
+            <div class="module-info">
+                <h2>المحور الثالث: هندسة تأمين المحافظ وإدارة المفاتيح الشفرية</h2>
+                <p>شرح عملي للوقاية الأقوى لثروتك الرقمية. فهم الفروق الفنية بين المحافظ الساخنة (Hot Wallets) والباردة (Cold Wallets)، والممارسات الصارمة لتوليد وحفظ عبارات الاستعادة والذاكرة السحابية الآمنة لقطع الطريق أمام المخترقين.</p>
+                <div class="module-meta">
+                    <span class="meta-item"><i class="fa-regular fa-file-lines"></i> ٤ وحدات دراسية</span>
+                    <span class="meta-item"><i class="fa-regular fa-clock"></i> ساعتان</span>
+                    <span class="meta-item"><i class="fa-solid fa-layer-group"></i> مستوى متوسط</span>
+                </div>
+            </div>
+            <i class="fa-solid fa-chevron-left module-arrow" aria-hidden="true"></i>
+        </a>
 
-    <a href="modules/regulations.html" class="module-card">
-        <div class="module-icon"><i class="fa-solid fa-scale-balanced"></i></div>
-        <div class="module-info">
-            <h3>المحور الرابع: التشريعات والرقابة الدولية</h3>
-            <p>فهم الفرق بين التراخيص السيادية الصارمة وتراخيص الأوفشور الهشة.</p>
-        </div>
-        <i class="fa-solid fa-chevron-left module-arrow"></i>
-    </a>
+        <a href="modules/regulations.html" class="module-card" aria-label="المحور الرابع: التشريعات الدولية وهياكل التراخيص المالية">
+            <div class="module-icon"><i class="fa-solid fa-scale-balanced" aria-hidden="true"></i></div>
+            <div class="module-info">
+                <h2>المحور الرابع: التشريعات الدولية وهياكل التراخيص المالية</h2>
+                <p>دليلك القانوني لتقييم الكيانات الاستثمارية. تعلّم فك شفرات التراخيص المالية والتمييز الفوري بين الهيئات الرقابية السيادية الصارمة وبين شهادات الجزر وتراخيص الأوفشور (Offshore) الهشة التي تُستخدم كغطاء قانوني لعمليات النصب.</p>
+                <div class="module-meta">
+                    <span class="meta-item"><i class="fa-regular fa-file-lines"></i> ٤ وحدات دراسية</span>
+                    <span class="meta-item"><i class="fa-regular fa-clock"></i> ساعتان ونصف</span>
+                    <span class="meta-item"><i class="fa-solid fa-layer-group"></i> مستوى متقدم</span>
+                </div>
+            </div>
+            <i class="fa-solid fa-chevron-left module-arrow" aria-hidden="true"></i>
+        </a>
+    </div>
 </div>
-</div>
+</main>
 
 <footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="footer-logo"><i class="fa-solid fa-graduation-cap"></i> أكاديمية الأصول الرقمية</div>
-      <p class="footer-desc">منصتك المعرفية الأولى لتفكيك فخاخ هندسة الإقناع وحماية أصولك الرقمية. جزء من المنظومة الرقمية المتكاملة 2026.</p>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <div class="footer-logo"><i class="fa-solid fa-graduation-cap"></i> أكاديمية الأصول الرقمية</div>
+            <p class="footer-desc">المنصة التعليمية والمعرفية المستقلة والأولى لتفكيك فخاخ التلاعب النفسي والهندسة الاجتماعية وحماية أصولك المشفرة واستثماراتك. شريك استراتيجي في المنظومة الأمنية المتكاملة لعام 2026.</p>
+        </div>
+        <div class="footer-links">
+            <nav class="link-group" aria-label="روابط الأكاديمية">
+                <div class="group-title">الأكاديمية</div>
+                <ul>
+                    <li><a href="modules.html">المحاور التعليمية</a></li>
+                    <li><a href="simulator.html">محاكي النصب</a></li>
+                    <li><a href="blog.html">المدونة المعرفية</a></li>
+                </ul>
+            </nav>
+            <nav class="link-group" aria-label="روابط الشركاء">
+                <div class="group-title">المنظومة الرقمية الشريكة</div>
+                <ul>
+                    <li><a href="https://verification-hub.net" target="_blank" rel="noopener">مركز التحقق الشامل</a></li>
+                    <li><a href="https://verification-hub.net/ecosystem.html" target="_blank" rel="noopener">مبادرة درع المستثمر</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
-    <div class="footer-links">
-      <div class="link-group">
-        <div class="group-title">الأكاديمية</div>
-        <ul>
-          <li><a href="modules.html">المحاور التعليمية</a></li>
-          <li><a href="simulator.html">محاكي النصب</a></li>
-          <li><a href="blog.html">المدونة</a></li>
-        </ul>
-      </div>
-      <div class="link-group">
-        <div class="group-title">المنظومة الرقمية</div>
-        <ul>
-          <li><a href="https://verification-hub.net" target="_blank">مركز التحقق</a></li>
-          <li><a href="https://verification-hub.net/ecosystem.html" target="_blank">درع المستثمر</a></li>
-        </ul>
-      </div>
+    <div class="footer-bottom">
+        <span>© 2026 جميع الحقوق محفوظة — أكاديمية الأصول الرقمية (Digital Assets Academy)</span>
+        <span class="footer-badge">🛡️ أمان الويب 3</span>
     </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 جميع الحقوق محفوظة — أكاديمية الأصول الرقمية</span>
-    <span class="footer-badge">Digital Assets Academy</span>
-  </div>
 </footer>
 
 </body>
