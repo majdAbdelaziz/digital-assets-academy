@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تأمين المحافظ | أكاديمية الأصول الرقمية</title>
+<meta name="description" content="أنت البنك الخاص بك في عالم الكريبتو. تعرّف على الفرق بين بيئات التخزين وكيف تحمي مفاتيحك من الفقدان أو السرقة.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--bg:#FAF7F2;--bg2:#EFECE6;--text:#3A3A3A;--accent:#4A7C59;--accent-hover:#3b6347;--accent-light:rgba(74,124,89,0.09);--card:#ffffff;--muted:#666;--danger-text:#b94a48;}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Tajawal',sans-serif;}
+body{background:var(--bg);color:var(--text);line-height:1.8;}
+.site-nav{position:sticky;top:0;z-index:100;background:rgba(250,247,242,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--bg2);padding:0 24px;}
+.nav-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.nav-logo{display:flex;align-items:center;gap:9px;font-size:16px;font-weight:700;color:var(--accent);text-decoration:none;}
+.nav-logo i{font-size:20px;}
+.nav-links{display:flex;align-items:center;gap:22px;}
+.nav-links a{font-size:13.5px;color:var(--muted);text-decoration:none;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--accent);}
+.nav-cta{background:var(--accent);color:#fff;padding:8px 18px;border-radius:8px;font-size:13.5px;font-weight:700;text-decoration:none;transition:background .2s;}
+.nav-cta:hover{background:var(--accent-hover);}
+.page-body{padding:30px 20px;}
+.container{max-width:1000px;margin:0 auto;}
+.breadcrumb{font-size:.85rem;color:var(--muted);margin-bottom:20px;}
+.breadcrumb a{color:var(--accent);text-decoration:none;}
+.subpage-header{text-align:center;margin-bottom:50px;background:linear-gradient(135deg,var(--bg) 0%,var(--bg2) 100%);padding:40px;border-radius:16px;border:1px solid var(--bg2);}
+.subpage-header h1{font-size:2.2rem;font-weight:700;margin-bottom:15px;}
+.subpage-header p{font-size:1.1rem;color:#555;max-width:700px;margin:0 auto;}
+.comparison-section{background:var(--card);border:1px solid var(--bg2);border-radius:14px;padding:30px;margin-bottom:40px;box-shadow:0 4px 12px rgba(0,0,0,0.01);overflow-x:auto;}
+.comparison-section h2{font-size:1.4rem;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+table{width:100%;border-collapse:collapse;text-align:right;min-width:600px;}
+th,td{padding:15px;border-bottom:1px solid var(--bg2);font-size:.95rem;}
+th{background:var(--bg);font-weight:700;color:var(--text);}
+.seed-phrase-box{background:#fff;border:1px solid var(--bg2);border-radius:14px;padding:30px;margin-bottom:40px;}
+.seed-phrase-box h2{font-size:1.4rem;font-weight:700;color:var(--danger-text);margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.rules-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.rule-card{background:var(--bg);padding:20px;border-radius:8px;border-right:4px solid var(--accent);}
+.rule-card h3{font-size:1.05rem;font-weight:700;margin-bottom:8px;color:var(--text);}
+.rule-card p{font-size:.9rem;color:#666;}
+.module-nav{display:flex;justify-content:space-between;gap:16px;margin-top:40px;}
+.module-nav a{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--bg2);padding:12px 22px;border-radius:8px;text-decoration:none;color:var(--text);font-size:.95rem;font-weight:500;transition:all .2s;}
+.module-nav a:hover{border-color:var(--accent);color:var(--accent);}
+.site-footer{background:#F0EDE7;border-top:1px solid var(--bg2);padding:50px 20px 20px;margin-top:60px;}
+.footer-inner{max-width:1140px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px;margin-bottom:30px;}
+.footer-brand{flex:1;min-width:260px;}
+.footer-logo{display:flex;align-items:center;gap:9px;font-size:18px;font-weight:700;color:var(--accent);margin-bottom:12px;}
+.footer-logo i{font-size:22px;}
+.footer-desc{font-size:13px;color:var(--muted);line-height:1.7;max-width:340px;}
+.footer-links{display:flex;gap:40px;flex-wrap:wrap;}
+.link-group{min-width:140px;}
+.group-title{font-size:14px;font-weight:700;margin-bottom:14px;}
+.link-group ul{list-style:none;}
+.link-group ul li{margin-bottom:10px;}
+.link-group ul li a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .3s;}
+.link-group ul li a:hover{color:var(--accent);}
+.footer-bottom{max-width:1140px;margin:0 auto;padding-top:20px;border-top:1px solid var(--bg2);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;font-size:12px;color:#999;gap:10px;}
+.footer-badge{background:var(--accent-light);color:var(--accent);padding:4px 12px;border-radius:50px;font-size:11px;font-weight:700;}
+@media(max-width:768px){.nav-links{display:none;}.rules-grid{grid-template-columns:1fr;}.module-nav{flex-direction:column;}}
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><i class="fa-solid fa-graduation-cap"></i> أكاديمية الأصول الرقمية</a>
+    <div class="nav-links">
+      <a href="../index.html">الرئيسية</a>
+      <a href="../simulator.html">محاكي النصب</a>
+      <a href="../modules.html" class="active">المحاور التعليمية</a>
+      <a href="../blog.html">المدونة</a>
+      <a href="../join.html">انضم إلينا</a>
+    </div>
+    <a href="../join.html" class="nav-cta">ابدأ التعلم</a>
+  </div>
+</nav>
+<div class="page-body">
+<div class="container">
+    <div class="breadcrumb"><a href="../modules.html">المحاور التعليمية</a> / تأمين المحافظ</div>
+    <header class="subpage-header">
+        <h1>المحور الثالث: بروتوكولات حماية المحافظ وتأمين الأصول</h1>
+        <p>أنت البنك الخاص بك في عالم الكريبتو، وهذه المسؤولية تتطلب حماية صارمة. تعرّف على الفرق بين بيئات التخزين وكيف تحمي مفاتيحك من الفقدان أو السرقة.</p>
+    </header>
+
+    <div class="comparison-section">
+        <h2><i class="fa-solid fa-scale-balanced" style="color:var(--accent);"></i> مقارنة أمنية: المحافظ الساخنة vs المحافظ الباردة</h2>
+        <table>
+            <thead><tr><th>وجه المقارنة</th><th>المحافظ الساخنة (Hot Wallets)</th><th>المحافظ الباردة (Cold Wallets)</th></tr></thead>
+            <tbody>
+                <tr><td><strong>التعريف</strong></td><td>برمجيات متصلة بالإنترنت (تطبيقات هاتف، إضافات متصفح مثل MetaMask).</td><td>أجهزة مادية (Hardware) منفصلة تماماً عن الإنترنت (مثل Ledger, Trezor).</td></tr>
+                <tr><td><strong>مستوى الأمان</strong></td><td>متوسط (معرضة لثغرات الجهاز، الهجمات الفيروسية، وروابط التصيد).</td><td>مطلق وعالٍ جداً (لا يمكن اختراقها عن بُعد لأن المفاتيح مخزنة أوفلاين).</td></tr>
+                <tr><td><strong>الاستخدام المثالي</strong></td><td>المبالغ الصغيرة، التداول اليومي، والتفاعل السريع مع منصات الـ DeFi.</td><td>تخزين المبالغ الكبيرة والاستثمارات طويلة الأجل (HODL).</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="seed-phrase-box">
+        <h2><i class="fa-solid fa-key"></i> الدستور المقدس لحماية عبارة الاستعادة (Seed Phrase)</h2>
+        <p style="font-size:.95rem;color:#555;margin-bottom:25px;">عبارة الاستعادة (12 أو 24 كلمة) هي ملكيتك الحقيقية للمحفظة. من يمتلكها يمتلك الأموال، وإذا ضاعت ضاع مالك للأبد. إليك بروتوكول الحماية الصارم:</p>
+        <div class="rules-grid">
+            <div class="rule-card"><h3>❌ التخزين الرقمي ممنوع قطعاً</h3><p>لا تحفظ الكلمات في نوتة الهاتف، أو إيميلك، أو لقطة شاشة (Screenshot). إذا اختُرق هاتفك أو حسابك السحابي، ستسرق أصولك في ثوانٍ.</p></div>
+            <div class="rule-card"><h3>📝 التخزين المادي التقليدي</h3><p>اكتب الكلمات بخط يدك على ورقة خارجية (أو احفرها على قطعة معدنية مقاومة للحريق)، واحتفظ بها في مكان سري وآمن جداً في منزلك.</p></div>
+            <div class="rule-card"><h3>🔒 خدعة الدعم الفني الوهمي</h3><p>لا يوجد مشروع، أو منصة، أو موظف دعم فني حقيقي يطلب منك عبارة الاستعادة الخاصة بك أبداً تحت أي ظرف. من يطلبها هو محتال 100%.</p></div>
+            <div class="rule-card"><h3>🛡️ تقسيم النسخ الاحتياطية</h3><p>يفضل عمل نسختين ورقتين للاحتياط وتوزيعهما في مكانين منفصلين جغرافياً، لضمان الوصول لأموالك في حالات الطوارئ القصوى.</p></div>
+        </div>
+    </div>
+
+    <div class="module-nav">
+        <a href="blockchain.html"><i class="fa-solid fa-arrow-right"></i> المحور السابق: أساسيات البلوكشين</a>
+        <a href="regulations.html">المحور التالي: التشريعات الدولية <i class="fa-solid fa-arrow-left"></i></a>
+    </div>
+</div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><i class="fa-solid fa-graduation-cap"></i> أكاديمية الأصول الرقمية</div>
+      <p class="footer-desc">منصتك المعرفية الأولى لتفكيك فخاخ هندسة الإقناع وحماية أصولك الرقمية. جزء من المنظومة الرقمية المتكاملة 2026.</p>
+    </div>
+    <div class="footer-links">
+      <div class="link-group"><div class="group-title">الأكاديمية</div><ul>
+        <li><a href="../modules.html">المحاور التعليمية</a></li>
+        <li><a href="../simulator.html">محاكي النصب</a></li>
+        <li><a href="../blog.html">المدونة</a></li>
+      </ul></div>
+      <div class="link-group"><div class="group-title">المنظومة الرقمية</div><ul>
+        <li><a href="https://verification-hub.net" target="_blank">مركز التحقق</a></li>
+        <li><a href="https://verification-hub.net/ecosystem.html" target="_blank">درع المستثمر</a></li>
+      </ul></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 جميع الحقوق محفوظة — أكاديمية الأصول الرقمية</span>
+    <span class="footer-badge">Digital Assets Academy</span>
+  </div>
+</footer>
+</body>
+</html>
