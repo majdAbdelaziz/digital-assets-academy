@@ -3,7 +3,7 @@
   
   <!-- الصفحة الرئيسية -->
   <url>
-    <loc>https://majdabdelaziz.github.io/digital-assets-academy/index.html</loc>
+    <loc>https://digital-assets-academy.com/index.html</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.00</priority>
@@ -11,7 +11,7 @@
 
   <!-- صفحة المحاور التعليمية الرئيسية -->
   <url>
-    <loc>https://majdabdelaziz.github.io/digital-assets-academy/modules.html</loc>
+    <loc>https://digital-assets-academy.com/modules.html</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
@@ -19,7 +19,7 @@
 
   <!-- المحور الأول: هندسة الإقناع -->
   <url>
-    <loc>https://majdabdelaziz.github.io/digital-assets-academy/modules/persuasion.html</loc>
+    <loc>https://digital-assets-academy.com/modules/persuasion.html</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -27,7 +27,7 @@
 
   <!-- المحور الثاني: أساسيات البلوكشين -->
   <url>
-    <loc>https://majdabdelaziz.github.io/digital-assets-academy/modules/blockchain.html</loc>
+    <loc>https://digital-assets-academy.com/modules/blockchain.html</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -35,7 +35,7 @@
 
   <!-- المحور الثالث: تأمين المحافظ -->
   <url>
-    <loc>https://majdabdelaziz.github.io/digital-assets-academy/modules/wallets.html</loc>
+    <loc>https://digital-assets-academy.com/modules/wallets.html</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -43,7 +43,7 @@
 
   <!-- المحور الرابع: التشريعات الدولية -->
   <url>
-    <loc>https://majdabdelaziz.github.io/digital-assets-academy/modules/regulations.html</loc>
+    <loc>https://digital-assets-academy.com/modules/regulations.html</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -51,7 +51,7 @@
 
   <!-- محاكي النصب -->
   <url>
-    <loc>https://majdabdelaziz.github.io/digital-assets-academy/simulator.html</loc>
+    <loc>https://digital-assets-academy.com/simulator.html</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
@@ -59,7 +59,7 @@
 
   <!-- المدونة -->
   <url>
-    <loc>https://majdabdelaziz.github.io/digital-assets-academy/blog.html</loc>
+    <loc>https://digital-assets-academy.com/blog.html</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.70</priority>
@@ -67,7 +67,7 @@
 
   <!-- صفحة انضم إلينا -->
   <url>
-    <loc>https://majdabdelaziz.github.io/digital-assets-academy/join.html</loc>
+    <loc>https://digital-assets-academy.com/join.html</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.50</priority>
