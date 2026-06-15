@@ -37,6 +37,7 @@
             --accent-light: rgba(74, 124, 89, 0.09);
             --card: #ffffff;
             --muted: #666;
+            --danger: #c94a4a;
         }
         * {
             box-sizing: border-box;
@@ -354,7 +355,7 @@
         }
         .article-meta span i { color: var(--accent); }
         
-        /* متن المقال والفقرات الداخية */
+        /* متن المقال والفقرات الداخلية */
         .article-body {
             font-size: 1.12rem;
             color: #444;
@@ -566,9 +567,6 @@
 </footer>
 
 <script>
-let allArticles = [];
-let currentFilter = 'الكل';
-
 const ARTICLES = [
     {
         title: "تشريح فخ الـ Approve: كيف يتم سحب أصولك المشفرة دون علمك؟",
@@ -578,7 +576,7 @@ const ARTICLES = [
 <h3>ما هي خاصية الـ Approve برمجياً في المحافظ؟</h3>
 <p>عندما تقومين بإجراء تداول أو مبادلة أصول عبر منصة لامركزية، يطلب منك الموقع الذكي توقيع معاملة مشفرة تمنح هذا العقد صلاحية الوصول لعملاتك المخزنة. تكمن الثغرة والمصيدة الحقيقية عندما تطلب منصات الاحتيال وشبكات الهندسة الملتفة منح صلاحية "غير محدودة - Unlimited Approval".</p>
 <div class="highlight">"بمجرد ضغطكِ الفوري على وسم Approve في المواقع والروابط المشبوهة، أنتِ تمنحين المطور والمخترق المفتاح القانوني والبرمجي لسحب كامل أصول المحفظة وتفريغها في أي وقت دون إذن إضافي."</div>
-<h3>بروتوكول الوقاية: كيف تحمين محفظتك اللامركزية؟</h3>
+<h3>بروتوكول الوقاية: كيف تحمين محفظتك اللامركزية?</h3>
 <p><strong>١. حظر التوقيع الأعمى (Blind Signing):</strong> لا توافقي أبداً على بروتوكولات Approve في أي منصة لم يتم فحص وثوقيتها ومراجعتها يدوياً وتقنياً ١٠٠٪.<br><strong>٢. وضع سقف الصرف المخصص:</strong> راجعي تفاصيل المعاملة بدقة عبر المحفظة وحددي يدوياً سقفاً مخصصاً (Custom Spending Limit) يتناسب مع المعاملة اللحظية فقط بدلاً من الحد الأقصى المطلق.<br><strong>٣. المراجعة الدورية للصلاحيات:</strong> استخدمي أدوات الفحص والأمان المعتمدة دولياً مثل Revoke.cash لإلغاء وتطهير الصلاحيات القديمة الممنوحة للمنصات بشكل دوري مستمر.</p>`
     },
     {
@@ -588,7 +586,7 @@ const ARTICLES = [
         body: `<p>الاحتيال الرقمي ليس مجرد شفرات برمجية خبيثة وهجمات سيبرانية معقدة، بل هو في المقام الأول تلاعب نفسي سلوكي متقن يستهدف بعناية بالغة نقاط الضعف البشرية الفطرية: الرغبة في الكسب السريع، الاندفاع، والخوف من ضياع الفرص الثمينة وعوائد الاستثمار النخبوية والذي يُعرف بمصطلح <strong>(FOMO)</strong>.</p>
 <h3>وهم الاستعجال المصطنع وضغط الوقت</h3>
 <p>تعتمد أكثر من 90% من حملات وشبكات النصب المالي المبرمجة على مبدأ "الفرصة محدودة والعرض سينتهي تماماً خلال ساعتين!". هذا الضغط الزمني القاسي والمفتعل مصمم بشكل علمي لإيقاف التفكير العقلاني المنطقي في دماغ الضحية، وجرّها مرغمة وبسرعة إلى اتخاذ قرار مالي عاطفي سريع لإنقاذ الفرصة الوهمية.</p>
-<div class="highlight">"المحتال المحترف والمنتحر لصفة المستشار المالي لا يقنعك بجودة مشروعه، بل يبرع في إقناعك بأنك ستندمين طوال حياتك المادية إن لم تقومي بتحويل أموالك وأصولك الرقمية الآن فوراً."</div>
+<div class="highlight">"المحتال المحترف والمننتحل لصفة المستشار المالي لا يقنعك بجودة مشروعه، بل يبرع في إقناعك بأنك ستندمين طوال حياتك المادية إن لم تقومي بتحويل أموالك وأصولك الرقمية الآن فوراً."</div>
 <h3>أقنعة النخبوية ومجموعات الـ VIP المغلقة</h3>
 <p>يتزايد أسلوب الخداع هذا بكثافة على تطبيقات المحادثة مثل تليجرام، حيث يتم إيهام الضحية باختيارها الفريد للانضمام إلى "مجموعة قنوات VIP سرية ومغلقة". هذا التعزيز المفتعل لشعور الأهمية والتميز يجعل الضحية تقع تدريجياً في مصيدة الثقة بمديرين ومستشارين وهميين وتقوم بإيداع مدخراتها في كيانات منصات تداول غير مرخصة سيادياً.</p>`
     },
@@ -621,7 +619,7 @@ const ARTICLES = [
         body: `<p>من أحدث وأخطر أساليب النصب السيبراني المتبعة مؤخراً هو ما يُعرف بإنشاء "الشركات والمواقع المستنسخة (Clone Firms)". حيث يعمد المحتالون لبناء تصميم ونسخة مطابقة ومطورة لصفحات ومواقع شركات مالية حقيقية ومرخصة، بفروقات حرفية وتقنية طفيفة جداً تصعب ملاحظتها بالعين العادية غير الخبيرة.</p>
 <h3>الفحص الدقيق لاسم النطاق (Domain Name)</h3>
 <p>يلجأ النصابون لشراء نطاقات قريبة جداً من اسم النطاق الأصلي بفارق حرف واحد مخفي، أو يعتمدون امتداداً جغرافياً أو تجارياً مغايراً (مثل استخدام امتداد .net أو .co بدلاً من الامتداد الأصلي .com)، أو يقومون بحشو كلمات خادعة مثل "global"، "official"، أو "hub" لإضفاء صفة الرسمية الكاذبة وتضليل الباحث السريع.</p>
-<div class="highlight">"قبل وضع أي بيانات شخصية أو ربط محفظتك الرقمية، اكتب اسم النطاق للشركة بيدك يدوياً داخل المتصفح، واحذر تماماً من فتح روابط المنصات المرسلة إليك عبر غرف الشات ومجموعات التليجرام."</div>
+<div class="highlight">"Before placing any personal details or connecting your digital wallet, manually type the domain name of the firm into the address bar, and be absolutely wary of external links sent via public chat rooms or Telegram channels."</div>
 <h3>العلامات الفنية والدلالية الثلاث الفاضحة للتزوير</h3>
 <p><strong>١. شهادة الأمان وعمر النطاق:</strong> غياب بروتوكول التشفير الآمن (HTTPS) أو اكتشاف أن عمر شهادة الأمان والنطاق حديث جداً (عمره أيام أو أسابيع قليلة فقط) عبر أدوات Whois.<br><strong>٢. ركاكة المحتوى والترجمة الإملائية:</strong> وجود أخطاء لغوية فادحة، أو صياغات ترجمة آلية ركيكة في الصفحات الداخلية للموقع واستمارات التسجيل.<br><strong>٣. غموض قنوات الدعم والاتصال:</strong> انعدام وجود بريد إلكتروني رسمي يحمل اسم نطاق الشركة، والاعتماد المطلق والوحيد على تحويل المستخدمين لتطبيقات الشات الشخصية وغير الرسمية (مثل واتساب وتليجرام) لإتمام الصفقات وتلقي الأموال المادية.</p>`
     },
@@ -638,6 +636,12 @@ const ARTICLES = [
     }
 ];
 
+// تهيئة البيانات عند تحميل الصفحة
+window.addEventListener('DOMContentLoaded', () => {
+    allArticles = [...ARTICLES];
+    renderGrid();
+});
+
 // دالة عرض وشبكة المقالات المتطورة
 function renderGrid() {
     const q = document.getElementById('searchInput').value.trim().toLowerCase();
@@ -651,76 +655,76 @@ function renderGrid() {
     });
 
     grid.innerHTML = "";
+    
+    // تحديث شارة العداد
+    document.getElementById('countBadge').innerText = `${filtered.length} مقال معروض`;
+
     if (filtered.length === 0) {
         grid.innerHTML = `<div class="empty-state"><i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>عذراً، لا توجد مقالات توعوية أو تحليلات تطابق معايير بحثك الحالي.</div>`;
     } else {
-        filtered.forEach(a => {
-            const idx = allArticles.indexOf(a);
+        filtered.forEach((a, index) => {
             grid.insertAdjacentHTML('beforeend', `
-            <article class="blog-card" onclick="openArticle(${idx})" role="button" tabIndex="0" aria-label="مقالة بعنوان: ${a.title}. تصنيف: ${a.category}. وقت القراءة: ${a.read}">
-                <span class="card-cat">${a.category}</span>
-                <h2 class="card-title">${a.title}</h2>
-                <p class="card-excerpt">${a.excerpt}</p>
-                <div class="card-meta">
-                    <span><i class="fa-regular fa-calendar" aria-hidden="true"></i>${a.date}</span>
-                    <span><i class="fa-regular fa-clock" aria-hidden="true"></i>وقت القراءة: ${a.read}</span>
-                </div>
-                <span class="read-link">اقرأ التحليل والمقال كاملاً <i class="fa-solid fa-arrow-left" aria-hidden="true"></i></span>
-            </article>`);
+                <article class="blog-card" onclick="openArticle(${index})" role="button" tabIndex="0" aria-label="مقالة بعنوان: ${a.title}. تصنيف: ${a.category}. وقت القراءة: ${a.read}">
+                    <span class="card-cat">${a.category}</span>
+                    <h2 class="card-title">${a.title}</h2>
+                    <p class="card-excerpt">${a.excerpt}</p>
+                    <div class="card-meta">
+                        <span><i class="fa-regular fa-calendar"></i> ${a.date}</span>
+                        <span><i class="fa-regular fa-clock"></i> ${a.read}</span>
+                    </div>
+                    <span class="read-link">اقرأ التحليل الكامل <i class="fa-solid fa-arrow-left"></i></span>
+                </article>
+            `);
         });
     }
-    // إصلاح وعرض العداد ديناميكياً ليعكس عدد المقالات المعروضة الفعلي أمام المستخدم
-    document.getElementById('countBadge').textContent = filtered.length + ' مقال معروض حالياً';
 }
 
-// دالة تفعيل كبسولات الفلترة والتصنيف
-function setFilter(cat, el) {
-    currentFilter = cat;
-    document.querySelectorAll('.filter-pill').forEach(p => {
-        p.classList.remove('active');
-        p.setAttribute('aria-pressed', 'false');
-    });
-    el.classList.add('active');
-    el.setAttribute('aria-pressed', 'true');
+// دالة الفلترة عبر الكبسولات العليا
+function setFilter(category, buttonEl) {
+    currentFilter = category;
+    
+    // تحديث الفئة النشطة للأزرار
+    document.querySelectorAll('.filter-pill').forEach(btn => btn.classList.remove('active'));
+    buttonEl.classList.add('active');
+    
     renderGrid();
 }
 
-function filterArticles() { renderGrid(); }
+// دالة البحث النصي
+function filterArticles() {
+    renderGrid();
+}
 
-// دالة فتح وعرض المقال التخصصي الكامل بالانتقال السلس
-function openArticle(idx) {
-    const a = allArticles[idx];
-    if (!a) return;
-    document.getElementById('artCat').textContent = a.category;
-    document.getElementById('artTitle').textContent = a.title;
-    document.getElementById('artMeta').innerHTML = `
-        <span><i class="fa-regular fa-calendar" aria-hidden="true"></i>تاريخ النشر: ${a.date}</span>
-        <span><i class="fa-regular fa-clock" aria-hidden="true"></i>تقدير وقت القراءة: ${a.read}</span>`;
-    document.getElementById('artBody').innerHTML = a.body;
+// دالة فتح المقال وعرضه بالكامل
+function openArticle(index) {
+    const article = allArticles[index];
+    if (!article) return;
+
+    document.getElementById('artCat').innerText = article.category;
+    document.getElementById('artTitle').innerText = article.title;
     
+    document.getElementById('artMeta').innerHTML = `
+        <span><i class="fa-regular fa-calendar"></i> ${article.date}</span>
+        <span><i class="fa-regular fa-clock"></i> وقت القراءة: ${article.read}</span>
+        <span><i class="fa-solid fa-user-shield"></i> مستشار أمني</span>
+    `;
+    
+    document.getElementById('artBody').innerHTML = article.body;
+
+    // تبديل العرض وإخفاء الجريد
     document.getElementById('mainView').style.display = 'none';
-    const artView = document.getElementById('articleView');
-    artView.style.display = 'block';
-    artView.setAttribute('aria-hidden', 'false');
+    document.getElementById('articleView').style.display = 'block';
     
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// دالة إغلاق المقال والعودة السلسة للمدونة
+// دالة إغلاق المقال والعودة للجريد الرئيسي
 function closeArticle() {
-    const artView = document.getElementById('articleView');
-    artView.style.display = 'none';
-    artView.setAttribute('aria-hidden', 'true');
+    document.getElementById('articleView').style.display = 'none';
     document.getElementById('mainView').style.display = 'block';
     
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
-// تدشين وتحميل البيانات عند إقلاع الصفحة
-window.onload = () => {
-    allArticles = [...ARTICLES];
-    renderGrid();
-};
 </script>
 </body>
 </html>
