@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أكاديمية الأصول الرقمية | Digital Assets Academy</title>
+<meta name="description" content="منصتك المعرفية الأولى لتفكيك فخاخ هندسة الإقناع، فحص برمجيات البلوكشين، وتأمين الأصول المشفرة تحت مظلة التشريعات الدولية.">
+<meta name="keywords" content="أكاديمية أصول رقمية, كشف احتيال, بلوكشين, حماية محفظة, هندسة اجتماعية">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://digital-assets-academy.net/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="أكاديمية الأصول الرقمية">
+<meta property="og:description" content="تمكين معرفي مجاني لحماية استثماراتك الرقمية.">
+<meta property="og:locale" content="ar_AR">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{
+  --bg:#FAF7F2;--bg2:#EFECE6;--text:#3A3A3A;
+  --accent:#4A7C59;--accent-hover:#3b6347;--accent-light:rgba(74,124,89,0.09);
+  --card:#ffffff;--muted:#666;
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Tajawal',sans-serif;}
+body{background:var(--bg);color:var(--text);line-height:1.8;}
+
+/* NAV */
+.site-nav{position:sticky;top:0;z-index:100;background:rgba(250,247,242,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--bg2);padding:0 24px;}
+.nav-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.nav-logo{display:flex;align-items:center;gap:9px;font-size:16px;font-weight:700;color:var(--accent);text-decoration:none;}
+.nav-logo i{font-size:20px;}
+.nav-links{display:flex;align-items:center;gap:22px;}
+.nav-links a{font-size:13.5px;color:var(--muted);text-decoration:none;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--accent);}
+.nav-cta{background:var(--accent);color:#fff;padding:8px 18px;border-radius:8px;font-size:13.5px;font-weight:700;text-decoration:none;transition:background .2s;}
+.nav-cta:hover{background:var(--accent-hover);}
+
+/* HERO */
+.hero{text-align:center;padding:70px 20px 60px;background:linear-gradient(135deg,var(--bg) 0%,var(--bg2) 100%);}
+.hero h1{font-size:2.6rem;font-weight:700;color:var(--text);margin-bottom:16px;line-height:1.3;}
+.hero h1 span{color:var(--accent);}
+.hero p{font-size:1.15rem;color:var(--muted);max-width:760px;margin:0 auto 36px;}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:var(--accent);color:#fff;padding:14px 32px;border-radius:8px;font-size:1.05rem;font-weight:700;text-decoration:none;transition:all .3s;display:inline-flex;align-items:center;gap:8px;}
+.btn-primary:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:0 6px 16px rgba(74,124,89,0.2);}
+.btn-secondary{background:transparent;color:var(--text);border:1px solid var(--bg2);padding:14px 32px;border-radius:8px;font-size:1.05rem;font-weight:500;text-decoration:none;transition:all .3s;display:inline-flex;align-items:center;gap:8px;}
+.btn-secondary:hover{background:var(--bg2);}
+
+/* STATS */
+.stats{background:var(--bg2);border-radius:16px;padding:40px 20px;display:grid;grid-template-columns:repeat(3,1fr);text-align:center;gap:20px;max-width:1140px;margin:0 auto 60px;padding-left:20px;padding-right:20px;}
+.stat-item h2{font-size:2.5rem;color:var(--accent);font-weight:700;margin-bottom:5px;}
+.stat-item p{font-size:1rem;color:var(--muted);font-weight:500;}
+
+/* CONTAINER */
+.container{max-width:1140px;margin:0 auto;padding:0 20px;}
+
+/* SECTION HEADER */
+.section-header{text-align:center;margin-bottom:40px;}
+.section-header h2{font-size:1.9rem;font-weight:700;margin-bottom:10px;}
+.section-header p{color:var(--muted);font-size:1rem;max-width:600px;margin:0 auto;}
+
+/* FEATURES */
+.features{padding:60px 20px;}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;}
+.feature-card{background:var(--card);border:1px solid var(--bg2);border-radius:12px;padding:30px 20px;text-align:center;transition:all .3s;}
+.feature-card:hover{transform:translateY(-5px);box-shadow:0 8px 20px rgba(74,124,89,0.07);}
+.feature-card i{font-size:2.2rem;color:var(--accent);margin-bottom:15px;}
+.feature-card h3{font-size:1.2rem;font-weight:700;margin-bottom:12px;}
+.feature-card p{font-size:.95rem;color:var(--muted);text-align:justify;}
+
+/* CTA SIMULATOR */
+.simulator-cta{text-align:center;padding:50px 20px 70px;}
+.sim-btn{background:var(--accent);color:#fff;padding:16px 38px;font-size:1.2rem;font-weight:700;text-decoration:none;border-radius:8px;box-shadow:0 4px 15px rgba(74,124,89,0.2);transition:all .3s;display:inline-flex;align-items:center;gap:10px;}
+.sim-btn:hover{background:var(--accent-hover);transform:scale(1.04);}
+
+/* VISION */
+.vision{padding:0 20px 70px;}
+.vision-inner{background:var(--card);border:1px solid var(--bg2);border-radius:16px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+.vision-text h2{font-size:1.6rem;font-weight:700;margin-bottom:15px;}
+.vision-text p{color:var(--muted);font-size:1rem;text-align:justify;margin-bottom:15px;}
+.vision-quote{border-right:4px solid var(--accent);background:var(--bg);padding:20px;border-radius:0 8px 8px 0;font-style:italic;color:var(--muted);font-size:1rem;line-height:1.9;}
+
+/* FOOTER */
+.site-footer{background:#F0EDE7;border-top:1px solid var(--bg2);padding:50px 20px 20px;}
+.footer-inner{max-width:1140px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px;margin-bottom:30px;}
+.footer-brand{flex:1;min-width:260px;}
+.footer-logo{display:flex;align-items:center;gap:9px;font-size:18px;font-weight:700;color:var(--accent);margin-bottom:12px;}
+.footer-logo i{font-size:22px;}
+.footer-desc{font-size:13px;color:var(--muted);line-height:1.7;max-width:340px;}
+.footer-links{display:flex;gap:40px;flex-wrap:wrap;}
+.link-group{min-width:140px;}
+.group-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:14px;}
+.link-group ul{list-style:none;}
+.link-group ul li{margin-bottom:10px;}
+.link-group ul li a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .3s;}
+.link-group ul li a:hover{color:var(--accent);}
+.footer-bottom{max-width:1140px;margin:0 auto;padding-top:20px;border-top:1px solid var(--bg2);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;font-size:12px;color:#999;gap:10px;}
+.footer-badge{background:var(--accent-light);color:var(--accent);padding:4px 12px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:.5px;}
+
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .hero h1{font-size:1.9rem;}
+  .stats,.features-grid{grid-template-columns:1fr;}
+  .vision-inner{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><i class="fa-solid fa-graduation-cap"></i> أكاديمية الأصول الرقمية</a>
+    <div class="nav-links">
+      <a href="index.html" class="active">الرئيسية</a>
+      <a href="simulator.html">محاكي النصب</a>
+      <a href="modules.html">المحاور التعليمية</a>
+      <a href="blog.html">المدونة</a>
+      <a href="join.html">انضم إلينا</a>
+    </div>
+    <a href="join.html" class="nav-cta">ابدأ التعلم</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>أكاديمية الأصول الرقمية | <span>Digital Assets Academy</span></h1>
+  <p>منصتك المعرفية الأولى لتفكيك فخاخ هندسة الإقناع، فحص برمجيات البلوكشين، وتأمين الأصول المشفرة تحت مظلة التشريعات الدولية.</p>
+  <div class="hero-btns">
+    <a href="simulator.html" class="btn-primary"><i class="fa-solid fa-gamepad"></i> جرّب المحاكي</a>
+    <a href="modules.html" class="btn-secondary"><i class="fa-solid fa-book-open"></i> استكشف المحاور</a>
+  </div>
+</section>
+
+<div class="container">
+  <div class="stats">
+    <div class="stat-item"><h2>+4</h2><p>محاور تعليمية مكثفة</p></div>
+    <div class="stat-item"><h2>100%</h2><p>تدريب تفاعلي وتطبيقي</p></div>
+    <div class="stat-item"><h2>0$</h2><p>تمكين معرفي مجاني</p></div>
+  </div>
+</div>
+
+<section class="features">
+<div class="container">
+  <div class="section-header">
+    <h2>لماذا أكاديمية الأصول الرقمية؟</h2>
+    <p>نحن لا نمنحك نصائح عامة، بل نبني معك بروتوكولاً دفاعياً متكاملاً لحماية استثماراتك في الفضاء الرقمي.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <h3>منهجية تفكيكية</h3>
+      <p>نتعمق في الجوانب النفسية والبرمجية التي يستغلها المحتالون لإسقاط الضحايا، مما يمنحك حصانة كاملة ضد أساليب الهندسة الاجتماعية المعقدة.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fa-solid fa-laptop-code"></i>
+      <h3>بيئة محاكاة حية</h3>
+      <p>عبر محاكي الاحتيال المطور، ستخوض تجارب واقعية وتواجه سيناريوهات نصب حية لتصقل وعيك المالي والتقني بأمان دون المخاطرة بدولار واحد.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fa-solid fa-arrows-spin"></i>
+      <h3>منظومة متكاملة</h3>
+      <p>الأكاديمية جزء من رؤية حماية أشمل مرتبطة بـ <a href="https://verification-hub.net" target="_blank" style="color:var(--accent);font-weight:700;">مركز التحقق</a> ومنصات الإبلاغ والتوثيق التشاركي لحماية مجتمع المستثمرين.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="simulator-cta">
+  <a href="simulator.html" class="sim-btn">
+    <i class="fa-solid fa-gamepad"></i>
+    اختبر وعيك في محاكي الاحتيال التفاعلي
+  </a>
+</div>
+
+<section class="vision">
+<div class="container">
+  <div class="vision-inner">
+    <div class="vision-text">
+      <h2>رؤيتنا الاستراتيجية</h2>
+      <p>في عصر التحول المالي الرقمي السريع، أصبح الجهل بالآليات الفنية وأساليب الاحتيال مكلفاً للغاية. رسالتنا في <strong>Digital Assets Academy</strong> هي ردم الفجوة المعرفية وتمكين الأفراد ليصبحوا هم المراقب المالي وحارس الأمان الأول لأصولهم.</p>
+      <p>نؤمن بأن الوعي التقني الصارم هو السلاح الأمثل في مواجهة الكيانات الوهمية وعقود السمارت كونتراكت المفخخة.</p>
+    </div>
+    <div class="vision-quote">
+      "التمكين المعرفي هو خط الدفاع الأول والدرع الحقيقي للمستثمر في فضاء الويب 3 والأصول الرقمية اللامركزية."
+    </div>
+  </div>
+</div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><i class="fa-solid fa-graduation-cap"></i> أكاديمية الأصول الرقمية</div>
+      <p class="footer-desc">منصتك المعرفية الأولى لتفكيك فخاخ هندسة الإقناع وحماية أصولك الرقمية. جزء من المنظومة الرقمية المتكاملة 2026.</p>
+    </div>
+    <div class="footer-links">
+      <div class="link-group">
+        <div class="group-title">الأكاديمية</div>
+        <ul>
+          <li><a href="modules.html">المحاور التعليمية</a></li>
+          <li><a href="simulator.html">محاكي النصب</a></li>
+          <li><a href="blog.html">المدونة</a></li>
+          <li><a href="join.html">انضم إلينا</a></li>
+        </ul>
+      </div>
+      <div class="link-group">
+        <div class="group-title">المنظومة الرقمية</div>
+        <ul>
+          <li><a href="https://verification-hub.net" target="_blank">مركز التحقق</a></li>
+          <li><a href="https://verification-hub.net/ecosystem.html" target="_blank">درع المستثمر</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 جميع الحقوق محفوظة — أكاديمية الأصول الرقمية</span>
+    <span class="footer-badge">Digital Assets Academy</span>
+  </div>
+</footer>
+
+</body>
+</html>

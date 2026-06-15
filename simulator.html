@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محاكي النصب التفاعلي | أكاديمية الأصول الرقمية</title>
+<meta name="description" content="ادخل في مواجهة تفاعلية حية مع آليات هندسة النصب الرقمي واختبر جدار حمايتك المعرفي.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--bg:#FAF7F2;--bg2:#EFECE6;--text:#3A3A3A;--accent:#4A7C59;--accent-hover:#3b6347;--accent-light:rgba(74,124,89,0.09);--card:#ffffff;--muted:#666;--danger:#b94a48;}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Tajawal',sans-serif;}
+body{background:var(--bg);color:var(--text);line-height:1.6;}
+.site-nav{position:sticky;top:0;z-index:100;background:rgba(250,247,242,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--bg2);padding:0 24px;}
+.nav-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.nav-logo{display:flex;align-items:center;gap:9px;font-size:16px;font-weight:700;color:var(--accent);text-decoration:none;}
+.nav-logo i{font-size:20px;}
+.nav-links{display:flex;align-items:center;gap:22px;}
+.nav-links a{font-size:13.5px;color:var(--muted);text-decoration:none;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--accent);}
+.nav-cta{background:var(--accent);color:#fff;padding:8px 18px;border-radius:8px;font-size:13.5px;font-weight:700;text-decoration:none;transition:background .2s;}
+.nav-cta:hover{background:var(--accent-hover);}
+.page-body{padding:20px;}
+
+.sim-intro{text-align:center;margin-top:20px;margin-bottom:10px;}
+.sim-intro h1{font-size:2rem;font-weight:700;display:flex;align-items:center;justify-content:center;gap:10px;}
+.sim-intro p{color:var(--muted);font-size:1rem;margin-top:6px;}
+
+.platform-wrapper{max-width:1100px;margin:30px auto;background:var(--card);border:1px solid var(--bg2);border-radius:20px;box-shadow:0 15px 40px rgba(0,0,0,0.04);display:grid;grid-template-columns:300px 1fr;overflow:hidden;}
+
+.platform-sidebar{background:var(--bg2);padding:25px 20px;border-left:1px solid #e0ded9;display:flex;flex-direction:column;gap:25px;}
+.sidebar-title{font-size:1.1rem;font-weight:700;display:flex;align-items:center;gap:10px;border-bottom:2px solid var(--accent);padding-bottom:10px;}
+.case-list{display:flex;flex-direction:column;gap:12px;}
+.case-item{background:#fff;padding:12px;border-radius:8px;border:1px solid #e0ded9;font-size:.85rem;}
+.case-item strong{display:block;color:var(--danger);margin-bottom:4px;}
+.instruction-box{border-right:3px solid var(--accent);padding:15px;background:rgba(74,124,89,0.05);border-radius:4px;font-size:.85rem;}
+
+.main-simulator{display:flex;flex-direction:column;background:#fff;}
+.safety-bar-container{background:var(--text);color:#fff;padding:15px 25px;display:flex;align-items:center;justify-content:space-between;font-size:.95rem;font-weight:500;}
+.progress-track{width:50%;height:12px;background:#555;border-radius:6px;overflow:hidden;}
+.progress-fill{width:100%;height:100%;background:var(--accent);transition:width .5s ease,background-color .5s ease;}
+
+.chat-header{background:var(--bg);padding:20px 25px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--bg2);}
+.profile-area{display:flex;align-items:center;gap:12px;}
+.chat-header .avatar{width:48px;height:48px;background:#c4c1ba;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;color:#444;}
+.chat-header .user-info h3{font-size:1.1rem;font-weight:700;}
+.chat-header .user-info span{font-size:.85rem;color:#2b5876;}
+.level-badge{background:var(--accent);color:#fff;padding:5px 14px;border-radius:20px;font-size:.85rem;font-weight:500;}
+
+.chat-window{height:auto;max-height:420px;min-height:120px;padding:25px;overflow-y:auto;background:#FDFBF7;display:flex;flex-direction:column;gap:15px;}
+.message{max-width:80%;padding:14px 18px;border-radius:14px;font-size:1rem;opacity:0;transform:translateY(10px);animation:fadeIn .3s ease forwards;}
+.message.scammer{background:#fff;color:var(--text);align-self:flex-start;border-bottom-right-radius:4px;border:1px solid var(--bg2);box-shadow:0 2px 5px rgba(0,0,0,0.02);}
+.message.user{background:var(--accent);color:#fff;align-self:flex-end;border-bottom-left-radius:4px;}
+
+.typing-indicator{display:none;align-self:flex-start;background:#fff;border:1px solid var(--bg2);padding:12px 20px;border-radius:14px;border-bottom-right-radius:4px;}
+.typing-indicator span{height:8px;width:8px;float:left;margin:0 2px;background:#888;border-radius:50%;animation:bounce 1.3s infinite;}
+.typing-indicator span:nth-child(2){animation-delay:.15s;}
+.typing-indicator span:nth-child(3){animation-delay:.3s;}
+
+.options-container{padding:25px;background:#fff;border-top:1px solid var(--bg2);display:flex;flex-direction:column;gap:12px;}
+.option-btn{background:var(--bg);border:1px solid var(--bg2);padding:15px 20px;border-radius:8px;text-align:right;font-size:.95rem;cursor:pointer;transition:all .2s;font-weight:500;color:var(--text);}
+.option-btn:hover{background:var(--bg2);border-color:#c4c1ba;transform:translateX(-3px);}
+
+.result-box{display:none;padding:50px 30px;text-align:center;background:#fff;animation:fadeIn .5s ease forwards;}
+.result-box i{font-size:4.5rem;margin-bottom:20px;}
+.result-success i{color:var(--accent);}
+.result-fail i{color:var(--danger);}
+.result-box h2{margin-bottom:15px;font-size:1.7rem;}
+.result-box p{color:#555;margin-bottom:30px;font-size:1.05rem;max-width:550px;margin-left:auto;margin-right:auto;}
+.restart-btn{background:var(--text);color:#fff;padding:14px 35px;border-radius:8px;font-size:1rem;cursor:pointer;border:none;font-weight:500;transition:background-color .3s;}
+.restart-btn:hover{background:#222;}
+
+.site-footer{background:#F0EDE7;border-top:1px solid var(--bg2);padding:50px 20px 20px;margin-top:60px;}
+.footer-inner{max-width:1140px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px;margin-bottom:30px;}
+.footer-brand{flex:1;min-width:260px;}
+.footer-logo{display:flex;align-items:center;gap:9px;font-size:18px;font-weight:700;color:var(--accent);margin-bottom:12px;}
+.footer-logo i{font-size:22px;}
+.footer-desc{font-size:13px;color:var(--muted);line-height:1.7;max-width:340px;}
+.footer-links{display:flex;gap:40px;flex-wrap:wrap;}
+.link-group{min-width:140px;}
+.group-title{font-size:14px;font-weight:700;margin-bottom:14px;}
+.link-group ul{list-style:none;}
+.link-group ul li{margin-bottom:10px;}
+.link-group ul li a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .3s;}
+.link-group ul li a:hover{color:var(--accent);}
+.footer-bottom{max-width:1140px;margin:0 auto;padding-top:20px;border-top:1px solid var(--bg2);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;font-size:12px;color:#999;gap:10px;}
+.footer-badge{background:var(--accent-light);color:var(--accent);padding:4px 12px;border-radius:50px;font-size:11px;font-weight:700;}
+
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+@keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-4px)}}
+
+@media(max-width:850px){
+  .nav-links{display:none;}
+  .platform-wrapper{grid-template-columns:1fr;}
+  .platform-sidebar{border-left:none;border-bottom:1px solid #e0ded9;}
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><i class="fa-solid fa-graduation-cap"></i> أكاديمية الأصول الرقمية</a>
+    <div class="nav-links">
+      <a href="index.html">الرئيسية</a>
+      <a href="simulator.html" class="active">محاكي النصب</a>
+      <a href="modules.html">المحاور التعليمية</a>
+      <a href="blog.html">المدونة</a>
+      <a href="join.html">انضم إلينا</a>
+    </div>
+    <a href="join.html" class="nav-cta">ابدأ التعلم</a>
+  </div>
+</nav>
+
+<div class="page-body">
+<div class="sim-intro">
+    <h1><i class="fa-solid fa-robot" style="color:var(--accent);"></i> منصة المحاكاة الأمنية المتقدمة</h1>
+    <p>ادخل في مواجهة تفاعلية حية مع آليات هندسة النصب الرقمي واختبر جدار حمايتك.</p>
+</div>
+
+<div class="platform-wrapper">
+    <aside class="platform-sidebar">
+        <div class="sidebar-title">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span>قضايا نشطة قيد التحقيق</span>
+        </div>
+        <div class="case-list">
+            <div class="case-item">
+                <strong>#قضية 4081 - احتيال ذكي</strong>
+                خسارة 14,500$ لمستثمر وافق على عقد تفويض (Approve) غير مفحوص برمجياً.
+            </div>
+            <div class="case-item">
+                <strong>#قضية 4082 - هندسة اجتماعية</strong>
+                إسقاط ضحية عبر أسلوب ضغط الوقت ووهم "فرصة نخبوية لا تتكرر".
+            </div>
+        </div>
+        <div class="sidebar-title" style="margin-top:10px;">
+            <i class="fa-solid fa-shield-heart"></i>
+            <span>قواعد المواجهة الأمنية</span>
+        </div>
+        <div class="instruction-box">
+            مؤشر أمانك يبدأ بـ 100%، الاندفاع وراء الوعود البراقة أو الجهل بالآليات القانونية والتقنية يفقدك نقاط الأمان. إذا هبط المؤشر عن 50% يتم اختراقك فوراً!
+        </div>
+    </aside>
+
+    <main class="main-simulator">
+        <div class="safety-bar-container">
+            <span>مؤشر الأمان الرقمي للأصول: <strong id="scoreText">100%</strong></span>
+            <div class="progress-track"><div class="progress-fill" id="progressBar"></div></div>
+        </div>
+
+        <div class="chat-header">
+            <div class="profile-area">
+                <div class="avatar"><i class="fa-solid fa-user-astronaut"></i></div>
+                <div class="user-info">
+                    <h3 id="scammerName">أبو الفهد للاستثمارات</h3>
+                    <span id="scammerStatus">• نشط الآن (مستشار مالي مزعوم)</span>
+                </div>
+            </div>
+            <div class="level-badge" id="levelBadge">المرحلة 1/3</div>
+        </div>
+
+        <div class="chat-window" id="chatWindow">
+            <div class="message scammer" style="opacity:1;transform:translateY(0);">
+                مرحباً بك يا صديقي! شفت اهتمامك بالعملات الرقمية وحابب أقدملك فرصة العمر: منصتنا بتعطيك أرباح مضمونة 200% شهرياً بدون أي مخاطرة، والعرض هاد مخصص لنخبة محددة اليوم بس! 💰🔥
+            </div>
+            <div class="typing-indicator" id="typingIndicator"><span></span><span></span><span></span></div>
+        </div>
+
+        <div class="options-container" id="optionsContainer"></div>
+
+        <div class="result-box result-success" id="successBox">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h2>كفو! ممتاز جدًا... كشفتِ الخدعة بذكاء 🛡️</h2>
+            <p>تهانينا! لقد تمكنتِ من اجتياز المراحل الثلاث وتفكيك فخاخ هندسة الإقناع، فحص العقود الذكية المفخخة، والتحقق من الهيئات الرقابية الدولية القوية بنجاح.</p>
+            <button class="restart-btn" onclick="resetSimulator()">إعادة التجربة</button>
+        </div>
+
+        <div class="result-box result-fail" id="failBox">
+            <i class="fa-solid fa-circle-xmark"></i>
+            <h2>تم اختراق أصولك بنجاح! ⚠️</h2>
+            <p id="failReason">للأسف اندفعتِ وراء العرض السيكولوجي السريع أو وافقتِ على ربط محفظتك دون فحص برمجياتها.</p>
+            <button class="restart-btn" onclick="resetSimulator()">حاول مرة أخرى</button>
+        </div>
+    </main>
+</div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo"><i class="fa-solid fa-graduation-cap"></i> أكاديمية الأصول الرقمية</div>
+      <p class="footer-desc">منصتك المعرفية الأولى لتفكيك فخاخ هندسة الإقناع وحماية أصولك الرقمية. جزء من المنظومة الرقمية المتكاملة 2026.</p>
+    </div>
+    <div class="footer-links">
+      <div class="link-group">
+        <div class="group-title">الأكاديمية</div>
+        <ul>
+          <li><a href="modules.html">المحاور التعليمية</a></li>
+          <li><a href="simulator.html">محاكي النصب</a></li>
+          <li><a href="blog.html">المدونة</a></li>
+        </ul>
+      </div>
+      <div class="link-group">
+        <div class="group-title">المنظومة الرقمية</div>
+        <ul>
+          <li><a href="https://verification-hub.net" target="_blank">مركز التحقق</a></li>
+          <li><a href="https://verification-hub.net/ecosystem.html" target="_blank">درع المستثمر</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 جميع الحقوق محفوظة — أكاديمية الأصول الرقمية</span>
+    <span class="footer-badge">Digital Assets Academy</span>
+  </div>
+</footer>
+
+<script>
+const scenarios = {
+    1: {
+        level: "المرحلة 1: هندسة الإقناع",
+        options: [
+            { text: "واو! العرض ممتاز ومغري جداً، كيف بقدر أسجل وأحول الفلوس فوراً قبل ما تضيع الفرصة؟", scorePenalty: 40, next: 2, reply: "ممتاز الحماس! بس عشان تبدأ الأرباح الكبيرة فوراً، أرسل لي أموالك عبر محفظة USDT المشفرة هادي، ورح نفعّل حسابك الاستثماري بنص دقيقة!" },
+            { text: "أهلاً بك، كلام جميل.. بس ممكن ترسيلي اسم الشركة بالكامل ورقم ترخيصها الرقابي ومن أي هيئة دولية؟", scorePenalty: 0, next: 2, reply: "أكيد طبعاً يا غالي! نحن شركة مسجلة ومرخصة بمناطق الأوفشور برقم تداول مرن وسريع، وكل عملائنا مبسوطين.. عشان ما يضيع العرض حوّل هلأ وببعتلك الأوراق الرسمية لاحقاً بصيغة PDF وعليها الختم!" }
+        ]
+    },
+    2: {
+        level: "المرحلة 2: فخ البلوكشين والعقود",
+        options: [
+            { text: "تمام، عشان نكسب وقت ابعتلي رابط توثيق الحساب عشان أربط محفظتي اللامركزية (MetaMask) ونبدأ.", scorePenalty: 50, next: 3, reply: "تفضل هاد الرابط المباشر والآمن لتوثيق المحفظة والموافقة على العقد الذكي المربوط بالمنصة المضمونة، ادخل واضغط Approve فوراً لتفعيل الحساب المالي." },
+            { text: "أعتذر منك، أنا لا أحول أموال لشركات أوفشور ولا أربط محفظتي قبل فحص كود العقد الذكي (Smart Contract) على الـ Blockchain Explorer وتأكيد ترخيصكم من هيئة قوية مثل الـ FCA.", scorePenalty: 0, next: 3, reply: "يا صديقي ليش مصعّب الأمور؟ الهيئات الدولية بتاخد وقت وتعقيدات، والفرص الذكية بدها سرعة وجرأة.. هاد رابط التوثيق المباشر ادخل عليه وبلاش تضيع فرصة الثراء!" }
+        ]
+    },
+    3: {
+        level: "المرحلة 3: بروتوكول الأمان النهائي",
+        options: [
+            { text: "بما أنك مستعجل وتتهرب من التراخيص، رح أضغط Approve على الرابط اللي بعته عشان نجرب بمبلغ صغير.", scorePenalty: 60, next: "end", reply: "" },
+            { text: "أنا رح أقفل المحادثة فوراً، ووثقت حسابك والروابط اللي بعتها عشان أرفعها لمنصة 'درع المستثمر' لحماية باقي المستثمرين من الفخ.", scorePenalty: 0, next: "end", reply: "" }
+        ]
+    }
+};
+
+let currentLevel = 1;
+let userScore = 100;
+
+const chatWindow = document.getElementById('chatWindow');
+const optionsContainer = document.getElementById('optionsContainer');
+let typingIndicator = document.getElementById('typingIndicator');
+const successBox = document.getElementById('successBox');
+const failBox = document.getElementById('failBox');
+const scoreText = document.getElementById('scoreText');
+const progressBar = document.getElementById('progressBar');
+const levelBadge = document.getElementById('levelBadge');
+
+function loadOptions(level) {
+    optionsContainer.innerHTML = "";
+    if (level === "end") return;
+    levelBadge.innerText = `المرحلة ${level}/3`;
+    const currentScenario = scenarios[level];
+    currentScenario.options.forEach((opt, index) => {
+        const btn = document.createElement('button');
+        btn.className = "option-btn";
+        btn.innerText = opt.text;
+        btn.onclick = () => handleChoice(level, index);
+        optionsContainer.appendChild(btn);
+    });
+}
+
+function handleChoice(level, optionIndex) {
+    const choice = scenarios[level].options[optionIndex];
+    appendMessage(choice.text, 'user');
+    optionsContainer.innerHTML = "";
+
+    userScore -= choice.scorePenalty;
+    if (userScore < 0) userScore = 0;
+    scoreText.innerText = `${userScore}%`;
+    progressBar.style.width = `${userScore}%`;
+    if (userScore <= 50) progressBar.style.backgroundColor = "var(--danger)";
+
+    if (userScore < 50) {
+        setTimeout(() => {
+            endGame(false, "للأسف وقعتِ في فخاخ المحتال! اندفعتِ وراء إغراء الأرباح السريعة أو ضغط التوقيت (FOMO)، أو وافقتِ على منح صلاحيات كاملة (Approve) لعقد ذكي مفخخ يتيح له سحب أصولك بالكامل.");
+        }, 1000);
+        return;
+    }
+
+    if (choice.next === "end") {
+        setTimeout(() => endGame(true, ""), 1500);
+    } else {
+        currentLevel = choice.next;
+        setTimeout(() => {
+            showTyping(true);
+            setTimeout(() => {
+                showTyping(false);
+                appendMessage(choice.reply, 'scammer');
+                loadOptions(currentLevel);
+            }, 2000);
+        }, 800);
+    }
+}
+
+function appendMessage(text, sender) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = `message ${sender}`;
+    msgDiv.innerText = text;
+    chatWindow.insertBefore(msgDiv, typingIndicator);
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+
+function showTyping(show) {
+    typingIndicator.style.display = show ? 'block' : 'none';
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+
+function endGame(isWin, reason) {
+    chatWindow.style.display = 'none';
+    optionsContainer.style.display = 'none';
+    if (isWin) {
+        successBox.style.display = 'block';
+    } else {
+        document.getElementById('failReason').innerText = reason;
+        failBox.style.display = 'block';
+    }
+}
+
+function resetSimulator() {
+    currentLevel = 1;
+    userScore = 100;
+    scoreText.innerText = "100%";
+    progressBar.style.width = "100%";
+    progressBar.style.backgroundColor = "var(--accent)";
+
+    chatWindow.innerHTML = `
+        <div class="message scammer" style="opacity:1;transform:translateY(0);">
+            مرحباً بك يا صديقي! شفت اهتمامك بالعملات الرقمية وحابب أقدملك فرصة العمر: منصتنا بتعطيك أرباح مضمونة 200% شهرياً بدون أي مخاطرة، والعرض هاد مخصص لنخبة محددة اليوم بس! 💰🔥
+        </div>
+        <div class="typing-indicator" id="typingIndicator"><span></span><span></span><span></span></div>
+    `;
+    typingIndicator = document.getElementById('typingIndicator');
+
+    chatWindow.style.display = 'flex';
+    optionsContainer.style.display = 'flex';
+    successBox.style.display = 'none';
+    failBox.style.display = 'none';
+
+    loadOptions(1);
+}
+
+loadOptions(1);
+</script>
+</body>
+</html>
