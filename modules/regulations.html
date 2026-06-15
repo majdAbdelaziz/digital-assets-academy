@@ -1,151 +1,500 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>التشريعات الدولية | أكاديمية الأصول الرقمية</title>
-<meta name="description" content="القانون لا يحمي المغفلين، ولكنه يمنح الواعين أدوات كشف التزييف. تعلّم الفرق بين التراخيص السيادية الحقيقية والمظلات الرقابية الوهمية.">
-<meta name="robots" content="index, follow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-:root{--bg:#FAF7F2;--bg2:#EFECE6;--text:#3A3A3A;--accent:#4A7C59;--accent-hover:#3b6347;--accent-light:rgba(74,124,89,0.09);--card:#ffffff;--muted:#666;--law-gold:#9F7A3E;}
-*{box-sizing:border-box;margin:0;padding:0;font-family:'Tajawal',sans-serif;}
-body{background:var(--bg);color:var(--text);line-height:1.8;}
-.site-nav{position:sticky;top:0;z-index:100;background:rgba(250,247,242,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--bg2);padding:0 24px;}
-.nav-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;}
-.nav-logo{display:flex;align-items:center;gap:9px;font-size:16px;font-weight:700;color:var(--accent);text-decoration:none;}
-.nav-logo i{font-size:20px;}
-.nav-links{display:flex;align-items:center;gap:22px;}
-.nav-links a{font-size:13.5px;color:var(--muted);text-decoration:none;transition:color .2s;}
-.nav-links a:hover,.nav-links a.active{color:var(--accent);}
-.nav-cta{background:var(--accent);color:#fff;padding:8px 18px;border-radius:8px;font-size:13.5px;font-weight:700;text-decoration:none;transition:background .2s;}
-.nav-cta:hover{background:var(--accent-hover);}
-.page-body{padding:30px 20px;}
-.container{max-width:1000px;margin:0 auto;}
-.breadcrumb{font-size:.85rem;color:var(--muted);margin-bottom:20px;}
-.breadcrumb a{color:var(--accent);text-decoration:none;}
-.subpage-header{text-align:center;margin-bottom:50px;background:linear-gradient(135deg,var(--bg) 0%,var(--bg2) 100%);padding:40px;border-radius:16px;border:1px solid var(--bg2);}
-.subpage-header h1{font-size:2.2rem;font-weight:700;margin-bottom:15px;}
-.subpage-header p{font-size:1.1rem;color:#555;max-width:700px;margin:0 auto;}
-.law-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px;margin-bottom:40px;}
-.law-card{background:var(--card);border:1px solid var(--bg2);border-radius:14px;padding:25px;box-shadow:0 4px 12px rgba(0,0,0,0.01);}
-.law-card h2{font-size:1.3rem;font-weight:700;margin-bottom:15px;display:flex;align-items:center;gap:10px;}
-.law-card.strong h2{color:var(--accent);}
-.law-card.weak h2{color:#b94a48;}
-.law-card p{font-size:.95rem;color:#555;text-align:justify;margin-bottom:15px;}
-.law-card ul{padding-right:20px;font-size:.9rem;color:#666;list-style-type:square;}
-.law-card li{margin-bottom:8px;}
-.verification-box{background:var(--bg2);border-radius:14px;padding:30px;margin-top:40px;margin-bottom:40px;}
-.verification-box h2{font-size:1.4rem;font-weight:700;color:var(--text);margin-bottom:15px;display:flex;align-items:center;gap:10px;}
-.steps-container{display:flex;flex-direction:column;gap:15px;}
-.step-item{display:flex;gap:15px;align-items:flex-start;background:var(--card);padding:15px;border-radius:8px;border-right:4px solid var(--law-gold);}
-.step-item .step-num{background:var(--law-gold);color:#fff;width:25px;height:25px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0;margin-top:2px;}
-.step-item p{font-size:.95rem;color:#444;}
-.module-nav{display:flex;justify-content:space-between;gap:16px;margin-top:40px;}
-.module-nav a{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--bg2);padding:12px 22px;border-radius:8px;text-decoration:none;color:var(--text);font-size:.95rem;font-weight:500;transition:all .2s;}
-.module-nav a:hover{border-color:var(--accent);color:var(--accent);}
-.site-footer{background:#F0EDE7;border-top:1px solid var(--bg2);padding:50px 20px 20px;margin-top:60px;}
-.footer-inner{max-width:1140px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px;margin-bottom:30px;}
-.footer-brand{flex:1;min-width:260px;}
-.footer-logo{display:flex;align-items:center;gap:9px;font-size:18px;font-weight:700;color:var(--accent);margin-bottom:12px;}
-.footer-logo i{font-size:22px;}
-.footer-desc{font-size:13px;color:var(--muted);line-height:1.7;max-width:340px;}
-.footer-links{display:flex;gap:40px;flex-wrap:wrap;}
-.link-group{min-width:140px;}
-.group-title{font-size:14px;font-weight:700;margin-bottom:14px;}
-.link-group ul{list-style:none;}
-.link-group ul li{margin-bottom:10px;}
-.link-group ul li a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .3s;}
-.link-group ul li a:hover{color:var(--accent);}
-.footer-bottom{max-width:1140px;margin:0 auto;padding-top:20px;border-top:1px solid var(--bg2);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;font-size:12px;color:#999;gap:10px;}
-.footer-badge{background:var(--accent-light);color:var(--accent);padding:4px 12px;border-radius:50px;font-size:11px;font-weight:700;}
-@media(max-width:768px){.nav-links{display:none;}.law-grid{grid-template-columns:1fr;}.module-nav{flex-direction:column;}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>التشريعات الدولية وفحص امتثال تراخيص التداول | أكاديمية الأصول الرقمية</title>
+    <meta name="description" content="تعلم كيف تفصل بين التراخيص السيادية الصارمة (FCA, ASIC, DFSA) وبين فخاخ شركات الأوفشور والشركات الوهمية الشبيهة (Clone Firms). الدليل القانوني لحماية أصولك الماليّة.">
+    <meta name="keywords" content="التشريعات الدولية، فحص الامتثال، تراخيص التداول، FCA، ASIC، تراخيص أوفشور، شركات وهمية، Clone Firms، الأصول الرقمية">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://majdabdelaziz.github.io/digital-assets-academy/modules/regulations.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="التشريعات الدولية وفحص الامتثال الرقابي | المحور التعليمي الرابع">
+    <meta property="og:description" content="القانون لا يحمي المغفلين، ولكنه يمنح الواعين أدوات كشف التزييف. تعلّم كيف تفصل بين التراخيص السيادية الحقيقية والمظلات الرقابية الوهمية والهشة.">
+    <meta property="og:url" content="https://majdabdelaziz.github.io/digital-assets-academy/modules/regulations.html">
+    <meta property="og:image" content="https://majdabdelaziz.github.io/digital-assets-academy/assets/images/regulations-module-seo.jpg">
+    <meta property="og:locale" content="ar_AR">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="فحص امتثال تراخيص شركات التداول والاستثمار الرقمي">
+    <meta name="twitter:description" content="بروتوكول عملي متكامل لفحص النطاقات الرقمية ومطابقة تراخيص الهيئات الرقابية الدولية والمحلية بنجاح.">
+    <meta name="twitter:image" content="https://majdabdelaziz.github.io/digital-assets-academy/assets/images/regulations-module-seo.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg: #FAF7F2;
+            --bg2: #EFECE6;
+            --text: #3A3A3A;
+            --accent: #4A7C59;
+            --accent-hover: #3b6347;
+            --accent-light: rgba(74, 124, 89, 0.09);
+            --card: #ffffff;
+            --muted: #666;
+            --law-gold: #9F7A3E;
+            --law-gold-light: rgba(159, 122, 62, 0.08);
+            --danger-text: #b94a48;
+            --danger-light: #FDF2F2;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        /* شريط الملاحة العلوي */
+        .site-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(250, 247, 242, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--bg2);
+            padding: 0 24px;
+        }
+        .nav-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .nav-logo i { font-size: 22px; }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color .2s;
+            font-weight: 500;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent);
+        }
+        .nav-cta {
+            background: var(--accent);
+            color: #fff;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background .2s;
+        }
+        .nav-cta:hover { background: var(--accent-hover); }
+
+        /* حاوي الصفحة الرئيسي */
+        .page-body { padding: 40px 20px; }
+        .container { max-width: 1040px; margin: 0 auto; }
+        
+        /* شريط التتبع */
+        .breadcrumb {
+            font-size: .9rem;
+            color: var(--muted);
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .breadcrumb a:hover { text-decoration: underline; }
+
+        /* الهيدر الرئيسي للمحور */
+        .subpage-header {
+            text-align: center;
+            margin-bottom: 45px;
+            background: linear-gradient(135deg, var(--bg) 0%, var(--bg2) 100%);
+            padding: 50px 40px;
+            border-radius: 16px;
+            border: 1px solid var(--bg2);
+        }
+        .subpage-header h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+        .subpage-header p {
+            font-size: 1.15rem;
+            color: #4A4A4A;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        /* شبكة كروت المقارنة القانونية */
+        .law-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 45px;
+        }
+        .law-card {
+            background: var(--card);
+            border: 1px solid var(--bg2);
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.01);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .law-card h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .law-card.strong { border-top: 4px solid var(--accent); }
+        .law-card.strong h2 { color: var(--accent); }
+        
+        .law-card.weak { border-top: 4px solid var(--danger-text); }
+        .law-card.weak h2 { color: var(--danger-text); }
+
+        .law-card p {
+            font-size: 1rem;
+            color: #4A4A4A;
+            text-align: justify;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        .law-card ul {
+            padding-right: 22px;
+            font-size: 0.95rem;
+            color: #555;
+            list-style-type: square;
+        }
+        .law-card li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        .law-card li strong {
+            color: var(--text);
+        }
+
+        /* حاوي بروتوكول التحقق العملي */
+        .verification-box {
+            background: var(--bg2);
+            border: 1px solid rgba(0,0,0,0.04);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 45px 0;
+        }
+        .verification-box h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .verification-box .intro-text {
+            font-size: 1.05rem;
+            color: #4A4A4A;
+            margin-bottom: 25px;
+        }
+        
+        /* تسلسل الخطوات التفاعلية */
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .step-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            background: var(--card);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid rgba(0,0,0,0.02);
+            border-right: 5px solid var(--law-gold);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.01);
+        }
+        .step-item .step-num {
+            background: var(--law-gold);
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: .95rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .step-item p {
+            font-size: 1rem;
+            color: #3A3A3A;
+            line-height: 1.8;
+            text-align: justify;
+        }
+        .step-item p strong {
+            color: var(--law-gold);
+            font-weight: 700;
+        }
+
+        /* أزرار الملاحة السفلية بين الوحدات */
+        .module-nav {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 50px;
+            border-top: 1px solid var(--bg2);
+            padding-top: 30px;
+        }
+        .module-nav a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--card);
+            border: 1px solid var(--bg2);
+            padding: 14px 26px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            font-size: 1rem;
+            font-weight: 700;
+            transition: all .25s;
+        }
+        .module-nav a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-light);
+            box-shadow: 0 4px 12px rgba(74, 124, 89, 0.1);
+        }
+
+        /* الفوتر المتناسق للشبكة التعليمية */
+        .site-footer {
+            background: #F0EDE7;
+            border-top: 1px solid var(--bg2);
+            padding: 60px 20px 20px;
+            margin-top: 80px;
+        }
+        .footer-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand {
+            flex: 1.5;
+            min-width: 280px;
+        }
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        .footer-logo i { font-size: 24px; }
+        .footer-desc {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.8;
+            max-width: 380px;
+        }
+        .footer-links {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+            flex: 1;
+            justify-content: flex-end;
+        }
+        .link-group { min-width: 150px; }
+        .group-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+        .link-group ul { list-style: none; }
+        .link-group ul li { margin-bottom: 12px; }
+        .link-group ul li a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color .3s;
+        }
+        .link-group ul li a:hover { color: var(--accent); }
+        .footer-bottom {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid var(--bg2);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #888;
+            gap: 10px;
+        }
+        .footer-badge {
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* الاستعلامات المرنة للهواتف والشاشات الصغيرة */
+        @media(max-width:768px){
+            .nav-links { display:none; }
+            .law-grid { grid-template-columns: 1fr; gap: 25px; }
+            .verification-box { padding: 25px 20px; }
+            .step-item { flex-direction: column; gap: 12px; padding: 20px; }
+            .module-nav { flex-direction: column; gap: 12px; }
+            .module-nav a { justify-content: center; }
+            .subpage-header { padding: 30px 20px; }
+            .subpage-header h1 { font-size: 1.8rem; }
+            .footer-links { justify-content: flex-start; }
+        }
+    </style>
 </head>
 <body>
+
 <nav class="site-nav">
-  <div class="nav-inner">
-    <a href="../index.html" class="nav-logo"><i class="fa-solid fa-graduation-cap"></i> أكاديمية الأصول الرقمية</a>
-    <div class="nav-links">
-      <a href="../index.html">الرئيسية</a>
-      <a href="../simulator.html">محاكي النصب</a>
-      <a href="../modules.html" class="active">المحاور التعليمية</a>
-      <a href="../blog.html">المدونة</a>
-      <a href="../join.html">انضم إلينا</a>
+    <div class="nav-inner">
+        <a href="../index.html" class="nav-logo" aria-label="أكاديمية الأصول الرقمية الصفحة الرئيسية">
+            <i class="fa-solid fa-graduation-cap"></i> أكاديمية الأصول الرقمية
+        </a>
+        <div class="nav-links">
+            <a href="../index.html">الرئيسية</a>
+            <a href="../simulator.html">محاكي النصب</a>
+            <a href="../modules.html" class="active">المحاور التعليمية</a>
+            <a href="../blog.html">المدونة</a>
+            <a href="../join.html">انضم إلينا</a>
+        </div>
+        <a href="../join.html" class="nav-cta">ابدأ التعلم الآن</a>
     </div>
-    <a href="../join.html" class="nav-cta">ابدأ التعلم</a>
-  </div>
 </nav>
-<div class="page-body">
+
+<main class="page-body">
 <div class="container">
-    <div class="breadcrumb"><a href="../modules.html">المحاور التعليمية</a> / التشريعات الدولية</div>
+    <div class="breadcrumb" role="navigation" aria-label="مسار التنقل">
+        <a href="../modules.html">المحاور التعليمية</a> / التشريعات الدولية وفحص الامتثال
+    </div>
+    
     <header class="subpage-header">
         <h1>المحور الرابع: التشريعات الدولية وفحص الامتثال</h1>
-        <p>القانون لا يحمي المغفلين، ولكنه يمنح الواعين أدوات كشف التزييف. تعلّم كيف تفصل بين التراخيص السيادية الحقيقية وبين المظلات الرقابية الوهمية والهشة.</p>
+        <p>القانون لا يحمي المغفلين، ولكنه يمنح الواعين والباحثين أدوات كشف التزييف والمطابقة القانونية. تعلّمي كيف تفصلين بكفاءة بين التراخيص السيادية الحقيقية وبين المظلات الرقابية الوهمية والهشة في الفضاء المالي الرقمي.</p>
     </header>
 
     <div class="law-grid">
-        <div class="law-card strong">
-            <h2><i class="fa-solid fa-building-shield"></i> 1. التراخيص السيادية الصارمة</h2>
-            <p>هي التراخيص الصادرة من دول تمتلك أنظمة مالية وقضائية معقدة لا تمنح تراخيصها إلا لشركات تثبت ملاءتها المالية وتخضع لرقابة دورية صارمة لحماية أموال المودعين.</p>
+        <section class="law-card strong" aria-labelledby="law-title-1">
+            <h2 id="law-title-1"><i class="fa-solid fa-building-shield" aria-hidden="true"></i> 1. التراخيص السيادية الصارمة (Tier-1)</h2>
+            <p>هي التراخيص القانونية الصادرة من دول تمتلك بيئات مالية وقضائية معقدة وصارمة للغاية. لا تُمنح هذه التراخيص إلا للشركات التي تثبت ملاءتها المالية الكاملة وتخضع لرقابة دورية وتدقيق حسابي صارم لضمان حماية تامة لأموال المودعين.</p>
             <ul>
-                <li><strong>هيئة السلوك المالي البريطانية (FCA):</strong> من أقوى الهيئات عالمياً، وتجبر الشركات على فصل أموال العملاء عن أموالها.</li>
-                <li><strong>هيئة الأوراق المالية والاستثمارات الأسترالية (ASIC).</strong></li>
-                <li><strong>سلطة دبي للخدمات المالية (DFSA)</strong> أو التراخيص المحلية الصادرة من المصارف المركزية السيادية.</li>
+                <li><strong>هيئة السلوك المالي البريطانية (FCA):</strong> وتعد من أقوى الهيئات الرقابية عالمياً، حيث تلزم الشركات بفصل أموال العملاء كلياً في حسابات مصرفية مستقلة عن أموال الشركة التشغيلية.</li>
+                <li><strong>هيئة الأوراق المالية والاستثمارات الأسترالية (ASIC):</strong> تفرض معايير تدقيق صارمة وعقوبات رادعة على الشركات المخالفة لحماية المستثمرين الأفراد.</li>
+                <li><strong>سلطة دبي للخدمات المالية (DFSA):</strong> المظلة الرقابية المحلية والسيادية التي تضمن أعلى درجات الامتثال المالي في المنطقة للشركات العاملة داخل مركز دبي المالي العالمي.</li>
             </ul>
-        </div>
-        <div class="law-card weak">
-            <h2><i class="fa-solid fa-gavel"></i> 2. فخ تراخيص الأوفشور والـ Shell Companies</h2>
-            <p>المحتالون يؤسسون شركاتهم في جزر نائية (مثل جزر مارشال، سانت فينسنت، أو الفانواتو). هذه المناطق تبيع تراخيص مالية عبر الإنترنت بمبالغ زهيدة دون شروط صارمة، ولا تملك أي سلطة قضائية لاسترداد أموالك إذا تم النصب عليك.</p>
+        </section>
+
+        <section class="law-card weak" aria-labelledby="law-title-2">
+            <h2 id="law-title-2"><i class="fa-solid fa-gavel" aria-hidden="true"></i> 2. فخ تراخيص الأوفشور والشركات الصورية (Shell Companies)</h2>
+            <p>يعمد المحتالون إلى تأسيس شركاتهم الاستثمارية وصياغة عقودهم في جزر نائية وولايات قضائية ضعيفة رقابياً (مثل جزر مارشال، سانت فينسنت، أو فانواتو). هذه المناطق تبيع التراخيص المالية والصورية عبر الإنترنت بمبالغ زهيدة وبلا شروط حقيقية.</p>
             <ul>
-                <li><strong>غياب الرقابة الفعلية:</strong> مجرد ورقة قانونية لا تضمن حماية الحسابات المودعة.</li>
-                <li><strong>صعوبة الملاحقة القانونية:</strong> لا يمكنك رفع دعوى قضائية على شركة مقرها مجرد صندوق بريد في جزيرة مجهولة.</li>
+                <li><strong>غياب الرقابة والمتابعة الفعليّة:</strong> الترخيص الممنوح هناك هو مجرد ورقة قانونية تشكيلية لا تضمن فحص الحسابات المودعة أو مراقبة سلوك الشركة المالي.</li>
+                <li><strong>استحالة الملاحقة القضائية واسترداد الأموال:</strong> لا يمكن للمحاكم المحلية أو الدولية ملاحقة أو رفع دعاوى قضائية ضد شركة يقع مقرها القانوني في مجرد صندوق بريد مجهول داخل جزيرة نائية.</li>
             </ul>
-        </div>
+        </section>
     </div>
 
-    <div class="verification-box">
-        <h2><i class="fa-solid fa-clipboard-check" style="color:var(--law-gold);"></i> الدليل العملي للتحقق من أي شركة تداول</h2>
-        <p style="font-size:.95rem;color:#555;margin-bottom:20px;">بصفتك متدرباً في الأكاديمية، قبل إيداع دولار واحد في أي منصة، اتبع هذا البروتوكول الثلاثي:</p>
+    <section class="verification-box" aria-labelledby="protocol-title">
+        <h2 id="protocol-title"><i class="fa-solid fa-clipboard-check" style="color:var(--law-gold);" aria-hidden="true"></i> الدليل العملي لبروتوكول التحقق من أي شركة استثمار</h2>
+        <p class="intro-text">بصفتكِ متدربة في الأكاديمية، وقبل إيداع أو تحويل دولار واحد إلى أي منصة تداول أو وسيط رقمي، يتعين عليكِ تطبيق هذا البروتوكول الثلاثي الحاسم:</p>
+        
         <div class="steps-container">
-            <div class="step-item"><div class="step-num">1</div><p><strong>البحث المستقل في سجل الهيئة المذكورة:</strong> إذا ادعت الشركة أنها مرخصة من الـ FCA البريطانية مثلاً، اذهبي مباشرة إلى الموقع الرسمي لـ FCA (وليس الرابط المبعوث من الشركة) وابحثي عن رقم الترخيص وتأكدي من حالة الشركة أنها نشطة (Active).</p></div>
-            <div class="step-item"><div class="step-num">2</div><p><strong>مطابقة النطاق الرقمي (Domain Matching):</strong> تأكدي من أن الموقع الإلكتروني الذي تتداولين عليه هو بالضبط نفس النطاق المسجل في وثيقة الهيئة الرقابية، لأن النصابين يقومون أحياناً بإنشاء مواقع بنطاقات مشابهة جداً لأسماء شركات مرخصة حقيقية (Clone Firms).</p></div>
-            <div class="step-item"><div class="step-num">3</div><p><strong>فحص طريقة الإيداع:</strong> الشركات المرخصة قانونياً تستقبل الأموال بحسابات بنكية باسم الشركة الرسمي، أو عبر بوابات دفع معتمدة. بمجرد أن يطلب منك "المستشار" تحويل الأموال لـ حساب شخصي، أو محفظة كربيتو مجهولة، فالحالة هنا نصب مباشر بغض النظر عن الأوراق التي يعرضها.</p></div>
+            <div class="step-item">
+                <div class="step-num" aria-hidden="true">1</div>
+                <p><strong>البحث المستقل المباشر في سجل الهيئة:</strong> إذا ادعت الشركة الاستثمارية أنها مرخصة وخاضعة لرقابة هيئة معينة مثل الـ FCA البريطانية، اذهبي بنفسكِ مباشرة إلى الموقع الإلكتروني الرسمي للهيئة الرقابية (وليس عبر الرابط المرفق لكِ من قِبل الشركة)، وابحثي برقم الترخيص للتأكد من أن حالة الشركة نشطة وقائمة فعلياً <strong>(Active / Authorised)</strong>.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-num" aria-hidden="true">2</div>
+                <p><strong>مطابقة النطاق الرقمي بدقة (Domain Matching):</strong> تأكدي بعناية فائقة من أن رابط الموقع الإلكتروني الذي تقومين بالتداول أو تسجيل حسابكِ عليه هو بالضبط نفس النطاق والنطاق الفرعي المسجل في وثائق الهيئة الرقابية الرسمية. يقوم النصابون أحياناً بإنشاء مواقع بنطاقات مشابهة جداً لأسماء شركات مرخصة حقيقية بهدف التمويه والسرقة فيما يُعرف باسم الشركات الاستنساخية <strong>(Clone Firms)</strong>.</p>
+            </div>
+            <div class="step-item">
+                <div class="step-num" aria-hidden="true">3</div>
+                <p><strong>فحص آليات وقنوات الإيداع المالي:</strong> الشركات المرخصة والممتثلة قانونياً تستقبل أموال عملائها حصراً عبر حسابات بنكية تجارية رسمية تحمل اسم الشركة المسجل، أو عبر بوابات دفع وسيطة معتمدة. بمجرد أن يطلب منكِ "المستشار المالي" تحويل الأموال إلى <strong>حساب بنكي شخصي لأفراد</strong>، أو إلى <strong>محفظة عملات رقمية (Crypto Wallet) مجهولة الهوية</strong>، فالحالة هنا تعد مؤشراً قاطعاً على النصب المباشر بغض النظر عن قوة الأوراق والشهادات المعروضة.</p>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div class="module-nav">
-        <a href="wallets.html"><i class="fa-solid fa-arrow-right"></i> المحور السابق: تأمين المحافظ</a>
-        <a href="../modules.html">كل المحاور <i class="fa-solid fa-arrow-left"></i></a>
-    </div>
+    <nav class="module-nav" aria-label="تنقل المحاور التعليمية">
+        <a href="wallets.html" aria-label="الانتقال للمحور السابق: تأمين المحافظ الرقمية"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i> المحور الثالث: تأمين المحافظ وإدارة المفاتيح</a>
+        <a href="../modules.html" aria-label="العودة لجميع المحاور">فهرس المحاور التعليمية <i class="fa-solid fa-arrow-left" aria-hidden="true"></i></a>
+    </nav>
 </div>
-</div>
+</main>
 
 <footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="footer-logo"><i class="fa-solid fa-graduation-cap"></i> أكاديمية الأصول الرقمية</div>
-      <p class="footer-desc">منصتك المعرفية الأولى لتفكيك فخاخ هندسة الإقناع وحماية أصولك الرقمية. جزء من المنظومة الرقمية المتكاملة 2026.</p>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <div class="footer-logo"><i class="fa-solid fa-graduation-cap"></i> أكاديمية الأصول الرقمية</div>
+            <p class="footer-desc">المنصة التعليمية والمعرفية المستقلة والأولى لتفكيك فخاخ التلاعب النفسي والهندسة الاجتماعية وحماية أصولك المشفرة واستثماراتك. شريك استراتيجي في المنظومة الأمنية المتكاملة لعام 2026.</p>
+        </div>
+        <div class="footer-links">
+            <nav class="link-group" aria-label="روابط الأكاديمية">
+                <div class="group-title">الأكاديمية</div>
+                <ul>
+                    <li><a href="../modules.html">المحاور التعليمية</a></li>
+                    <li><a href="../simulator.html">محاكي النصب</a></li>
+                    <li><a href="../blog.html">المدونة المعرفية</a></li>
+                </ul>
+            </nav>
+            <nav class="link-group" aria-label="روابط الشركاء">
+                <div class="group-title">المنظومة الرقمية الشريكة</div>
+                <ul>
+                    <li><a href="https://verification-hub.net" target="_blank" rel="noopener">مركز التحقق الشامل</a></li>
+                    <li><a href="https://verification-hub.net/ecosystem.html" target="_blank" rel="noopener">مبادرة درع المستثمر</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
-    <div class="footer-links">
-      <div class="link-group"><div class="group-title">الأكاديمية</div><ul>
-        <li><a href="../modules.html">المحاور التعليمية</a></li>
-        <li><a href="../simulator.html">محاكي النصب</a></li>
-        <li><a href="../blog.html">المدونة</a></li>
-      </ul></div>
-      <div class="link-group"><div class="group-title">المنظومة الرقمية</div><ul>
-        <li><a href="https://verification-hub.net" target="_blank">مركز التحقق</a></li>
-        <li><a href="https://verification-hub.net/ecosystem.html" target="_blank">درع المستثمر</a></li>
-      </ul></div>
+    <div class="footer-bottom">
+        <span>© 2026 جميع الحقوق محفوظة — أكاديمية الأصول الرقمية (Digital Assets Academy)</span>
+        <span class="footer-badge">⚖️ فحص الامتثال</span>
     </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 جميع الحقوق محفوظة — أكاديمية الأصول الرقمية</span>
-    <span class="footer-badge">Digital Assets Academy</span>
-  </div>
 </footer>
+
 </body>
 </html>
