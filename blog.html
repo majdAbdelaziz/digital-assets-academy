@@ -1,169 +1,568 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>المدونة والمعرفة الرقمية | أكاديمية الأصول الرقمية</title>
-<meta name="description" content="مقالات، تحليلات تقنية، وإرشادات عملية لمساعدتك على حماية أصولك الرقمية من الاحتيال.">
-<meta name="robots" content="index, follow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<style>
-:root{--bg:#FAF7F2;--bg2:#EFECE6;--text:#3A3A3A;--accent:#4A7C59;--accent-hover:#3b6347;--accent-light:rgba(74,124,89,0.09);--card:#ffffff;--muted:#666;}
-*{box-sizing:border-box;margin:0;padding:0;font-family:'Tajawal',sans-serif;}
-body{background:var(--bg);color:var(--text);line-height:1.8;}
-.site-nav{position:sticky;top:0;z-index:100;background:rgba(250,247,242,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--bg2);padding:0 24px;}
-.nav-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;}
-.nav-logo{display:flex;align-items:center;gap:9px;font-size:16px;font-weight:700;color:var(--accent);text-decoration:none;}
-.nav-logo i{font-size:20px;}
-.nav-links{display:flex;align-items:center;gap:22px;}
-.nav-links a{font-size:13.5px;color:var(--muted);text-decoration:none;transition:color .2s;}
-.nav-links a:hover,.nav-links a.active{color:var(--accent);}
-.nav-cta{background:var(--accent);color:#fff;padding:8px 18px;border-radius:8px;font-size:13.5px;font-weight:700;text-decoration:none;transition:background .2s;}
-.nav-cta:hover{background:var(--accent-hover);}
-.page-body{padding:40px 20px;}
-.container{max-width:1100px;margin:0 auto;}
-.page-header{margin-bottom:35px;border-bottom:2px solid var(--bg2);padding-bottom:20px;}
-.page-header h1{font-size:2.2rem;font-weight:700;display:flex;align-items:center;gap:12px;}
-.page-header h1 i{color:var(--accent);}
-.page-header p{color:#666;font-size:1.05rem;margin-top:8px;}
-.top-bar{display:flex;align-items:center;gap:12px;margin-bottom:1.5rem;flex-wrap:wrap;}
-.search-box{flex:1;min-width:180px;position:relative;}
-.search-box input{width:100%;padding:10px 40px 10px 14px;border-radius:8px;border:1px solid var(--bg2);background:var(--card);color:var(--text);font-size:.95rem;outline:none;transition:all .3s;}
-.search-box input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(74,124,89,0.1);}
-.search-icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#aaa;}
-.count-badge{background:var(--bg2);color:#666;font-size:.85rem;padding:4px 14px;border-radius:999px;white-space:nowrap;}
-.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:2rem;}
-.filter-pill{padding:7px 18px;border-radius:999px;border:1px solid var(--bg2);background:var(--card);color:var(--text);font-size:.88rem;cursor:pointer;transition:all .2s;}
-.filter-pill.active,.filter-pill:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
-.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;}
-.blog-card{background:var(--card);border:1px solid var(--bg2);border-radius:14px;padding:24px;cursor:pointer;transition:all .25s;display:flex;flex-direction:column;gap:12px;}
-.blog-card:hover{transform:translateY(-4px);box-shadow:0 10px 25px rgba(0,0,0,0.05);}
-.card-cat{display:inline-block;background:var(--accent-light);color:var(--accent);font-size:.8rem;font-weight:700;padding:4px 12px;border-radius:6px;}
-.card-title{font-size:1.1rem;font-weight:700;line-height:1.45;}
-.card-excerpt{font-size:.92rem;color:#666;line-height:1.65;}
-.card-meta{display:flex;gap:14px;font-size:.82rem;color:#999;margin-top:auto;padding-top:10px;border-top:1px solid var(--bg2);}
-.card-meta span{display:flex;align-items:center;gap:5px;}
-.read-link{font-size:.9rem;color:var(--accent);font-weight:700;display:flex;align-items:center;gap:5px;}
-.read-link i{transition:transform .2s;}
-.blog-card:hover .read-link i{transform:translateX(-4px);}
-.empty-state{grid-column:1/-1;text-align:center;padding:4rem 1rem;color:#aaa;}
-.empty-state i{font-size:2.5rem;display:block;margin-bottom:12px;}
-.article-view{display:none;}
-.back-btn{display:inline-flex;align-items:center;gap:8px;background:var(--bg2);color:var(--text);border:none;padding:10px 20px;border-radius:8px;font-size:.95rem;font-weight:500;cursor:pointer;margin-bottom:1.5rem;transition:all .2s;}
-.back-btn:hover{background:var(--accent);color:#fff;}
-.article-inner{background:var(--card);border:1px solid var(--bg2);border-radius:16px;padding:40px;}
-.article-cat{display:inline-block;background:var(--accent-light);color:var(--accent);font-size:.8rem;font-weight:700;padding:4px 12px;border-radius:6px;margin-bottom:14px;}
-.article-title{font-size:1.9rem;font-weight:700;line-height:1.4;margin-bottom:14px;}
-.article-meta{display:flex;gap:18px;font-size:.88rem;color:#999;margin-bottom:1.8rem;padding-bottom:1.5rem;border-bottom:1px solid var(--bg2);}
-.article-meta span{display:flex;align-items:center;gap:6px;}
-.article-body{font-size:1.05rem;color:#4A4A4A;line-height:1.95;}
-.article-body h3{font-size:1.3rem;font-weight:700;margin:1.8rem 0 0.8rem;color:var(--text);}
-.article-body p{margin-bottom:1rem;}
-.article-body .highlight{background:var(--bg);border-right:4px solid var(--accent);padding:18px 20px;border-radius:0 10px 10px 0;margin:1.5rem 0;font-style:italic;color:#555;}
-.site-footer{background:#F0EDE7;border-top:1px solid var(--bg2);padding:50px 20px 20px;margin-top:60px;}
-.footer-inner{max-width:1140px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px;margin-bottom:30px;}
-.footer-brand{flex:1;min-width:260px;}
-.footer-logo{display:flex;align-items:center;gap:9px;font-size:18px;font-weight:700;color:var(--accent);margin-bottom:12px;}
-.footer-logo i{font-size:22px;}
-.footer-desc{font-size:13px;color:var(--muted);line-height:1.7;max-width:340px;}
-.footer-links{display:flex;gap:40px;flex-wrap:wrap;}
-.link-group{min-width:140px;}
-.group-title{font-size:14px;font-weight:700;margin-bottom:14px;}
-.link-group ul{list-style:none;}
-.link-group ul li{margin-bottom:10px;}
-.link-group ul li a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .3s;}
-.link-group ul li a:hover{color:var(--accent);}
-.footer-bottom{max-width:1140px;margin:0 auto;padding-top:20px;border-top:1px solid var(--bg2);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;font-size:12px;color:#999;gap:10px;}
-.footer-badge{background:var(--accent-light);color:var(--accent);padding:4px 12px;border-radius:50px;font-size:11px;font-weight:700;}
-@media(max-width:768px){
-  .nav-links{display:none;}
-  .article-inner{padding:24px 16px;}
-  .article-title{font-size:1.4rem;}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>المدونة والمعرفة الرقمية | أكاديمية الأصول الرقمية</title>
+    <meta name="description" content="تصفح أحدث المقالات، التحليلات الفنية، والإرشادات التوعوية لتفكيك فخاخ هندسة الإقناع الخبيثة وحماية أصولك ومحافظك المشفرة في فضاء الويب 3 وعالم العملات الرقمية اللامركزية.">
+    <meta name="keywords" content="مدونة العملات الرقمية، سيكولوجية الاحتيال، فحص العقود الذكية، حماية المحافظ المشفرة، كشف المواقع المزيفة، أمان الويب 3، مركز التحقق، درع المستثمر">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://majdabdelaziz.github.io/digital-assets-academy/blog.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="المدونة والمعرفة الرقمية | أكاديمية الأصول الرقمية">
+    <meta property="og:description" content="تحليلات تقنية وإرشادات عملية صممها خبراؤنا لمساعدتك على تفكيك الهندسة الاجتماعية وتأمين استثماراتك المادية.">
+    <meta property="og:url" content="https://majdabdelaziz.github.io/digital-assets-academy/blog.html">
+    <meta property="og:image" content="https://majdabdelaziz.github.io/digital-assets-academy/assets/images/seo-preview.jpg">
+    <meta property="og:locale" content="ar_AR">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="المدونة والمعرفة الرقمية | ثقافة أمان الويب 3">
+    <meta name="twitter:description" content="مقالات وتحليلات برمجية متقدمة لكشف فخاخ الـ Approve والـ Honeypot على البلوكشين مجاناً.">
+    <meta name="twitter:image" content="https://majdabdelaziz.github.io/digital-assets-academy/assets/images/seo-preview.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg: #FAF7F2;
+            --bg2: #EFECE6;
+            --text: #3A3A3A;
+            --accent: #4A7C59;
+            --accent-hover: #3b6347;
+            --accent-light: rgba(74, 124, 89, 0.09);
+            --card: #ffffff;
+            --muted: #666;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        /* الناف بار والملاحة تزامناً مع بقية المنصة */
+        .site-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(250, 247, 242, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--bg2);
+            padding: 0 24px;
+        }
+        .nav-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .nav-logo i { font-size: 22px; }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        .nav-links a {
+            font-size: 14px;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color .2s;
+            font-weight: 500;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent);
+        }
+        .nav-cta {
+            background: var(--accent);
+            color: #fff;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background .2s;
+        }
+        .nav-cta:hover { background: var(--accent-hover); }
+
+        /* محتوى المدونة الرئيسي */
+        .page-body { padding: 50px 20px; }
+        .container { max-width: 1140px; margin: 0 auto; }
+        
+        .page-header {
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--bg2);
+            padding-bottom: 25px;
+        }
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: var(--text);
+        }
+        .page-header h1 i { color: var(--accent); }
+        .page-header p {
+            color: var(--muted);
+            font-size: 1.15rem;
+            margin-top: 10px;
+            max-width: 800px;
+        }
+
+        /* بار البحث والتصفية المتطور */
+        .top-bar {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.8rem;
+            flex-wrap: wrap;
+        }
+        .search-box {
+            flex: 1;
+            min-width: 240px;
+            position: relative;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 12px 45px 12px 18px;
+            border-radius: 8px;
+            border: 1px solid var(--bg2);
+            background: var(--card);
+            color: var(--text);
+            font-size: 1rem;
+            outline: none;
+            transition: all .3s;
+        }
+        .search-box input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.12);
+            background: #fff;
+        }
+        .search-icon {
+            position: absolute;
+            right: 15px;
+            left: auto;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #aaa;
+            font-size: 1.1rem;
+        }
+        .count-badge {
+            background: var(--bg2);
+            color: var(--text);
+            font-size: .9rem;
+            padding: 6px 16px;
+            border-radius: 999px;
+            white-space: nowrap;
+            font-weight: 700;
+        }
+        
+        /* كبسولات فلترة وتصنيف المقالات */
+        .filters {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+        .filter-pill {
+            padding: 8px 22px;
+            border-radius: 999px;
+            border: 1px solid var(--bg2);
+            background: var(--card);
+            color: var(--text);
+            font-size: .92rem;
+            cursor: pointer;
+            transition: all .25s;
+            font-weight: 500;
+        }
+        .filter-pill.active, .filter-pill:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+            box-shadow: 0 4px 12px rgba(74, 124, 89, 0.15);
+        }
+
+        /* شبكة عرض المقالات */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .blog-card {
+            background: var(--card);
+            border: 1px solid var(--bg2);
+            border-radius: 14px;
+            padding: 28px;
+            cursor: pointer;
+            transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .blog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(74, 124, 89, 0.08);
+            border-color: var(--accent);
+        }
+        .card-cat {
+            align-self: flex-start;
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: .82rem;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 6px;
+        }
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.5;
+            color: var(--text);
+            transition: color .2s;
+        }
+        .blog-card:hover .card-title { color: var(--accent); }
+        .card-excerpt {
+            font-size: .96rem;
+            color: #555;
+            line-height: 1.7;
+            text-align: justify;
+        }
+        .card-meta {
+            display: flex;
+            gap: 16px;
+            font-size: .85rem;
+            color: #888;
+            margin-top: auto;
+            padding-top: 14px;
+            border-top: 1px solid var(--bg2);
+            font-weight: 500;
+        }
+        .card-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .card-meta span i { color: var(--accent); }
+        .read-link {
+            font-size: .94rem;
+            color: var(--accent);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 5px;
+        }
+        .read-link i { transition: transform .25s; }
+        .blog-card:hover .read-link i { transform: translateX(-6px); }
+
+        .empty-state {
+            grid-column: 1/-1;
+            text-align: center;
+            padding: 5rem 1rem;
+            color: #888;
+        }
+        .empty-state i {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 15px;
+            color: var(--danger);
+        }
+
+        /* واجهة قراءة المقال الكامل */
+        .article-view { display: none; }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--bg2);
+            color: var(--text);
+            border: 1px solid #D6D1C7;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-bottom: 2rem;
+            transition: all .2s;
+        }
+        .back-btn:hover {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+            box-shadow: 0 4px 15px rgba(74, 124, 89, 0.2);
+        }
+        .article-inner {
+            background: var(--card);
+            border: 1px solid var(--bg2);
+            border-radius: 16px;
+            padding: 45px 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.01);
+        }
+        .article-cat {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--accent);
+            font-size: .85rem;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 6px;
+            margin-bottom: 18px;
+        }
+        .article-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.45;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        .article-meta {
+            display: flex;
+            gap: 22px;
+            font-size: .92rem;
+            color: #777;
+            margin-bottom: 2rem;
+            padding-bottom: 1.8rem;
+            border-bottom: 1px solid var(--bg2);
+            font-weight: 500;
+        }
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .article-meta span i { color: var(--accent); }
+        
+        /* متن المقال والفقرات الداخية */
+        .article-body {
+            font-size: 1.12rem;
+            color: #444;
+            line-height: 2;
+            text-align: justify;
+        }
+        .article-body h2, .article-body h3 {
+            font-size: 1.45rem;
+            font-weight: 700;
+            margin: 2.2rem 0 1rem;
+            color: var(--text);
+            border-right: 3px solid var(--accent);
+            padding-right: 12px;
+        }
+        .article-body p { margin-bottom: 1.25rem; }
+        .article-body br { margin-bottom: 10px; }
+        .article-body strong { color: var(--text); font-weight: 700; }
+        
+        .article-body .highlight {
+            background: var(--bg);
+            border-right: 5px solid var(--accent);
+            padding: 22px 25px;
+            border-radius: 0 12px 12px 0;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #444;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        /* الفوتر المتوافق والمعتمد للمنصة */
+        .site-footer {
+            background: #F0EDE7;
+            border-top: 1px solid var(--bg2);
+            padding: 60px 20px 20px;
+            margin-top: 80px;
+        }
+        .footer-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-brand {
+            flex: 1.5;
+            min-width: 280px;
+        }
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        .footer-logo i { font-size: 24px; }
+        .footer-desc {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.8;
+            max-width: 380px;
+        }
+        .footer-links {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+            flex: 1;
+            justify-content: flex-end;
+        }
+        .link-group { min-width: 150px; }
+        .group-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+        .link-group ul { list-style: none; }
+        .link-group ul li { margin-bottom: 12px; }
+        .link-group ul li a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color .3s;
+        }
+        .link-group ul li a:hover { color: var(--accent); }
+        .footer-bottom {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid var(--bg2);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #888;
+            gap: 10px;
+        }
+        .footer-badge {
+            background: var(--accent-light);
+            color: var(--accent);
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        @media(max-width:768px){
+            .nav-links { display:none; }
+            .article-inner { padding: 30px 20px; }
+            .article-title { font-size: 1.65rem; }
+            .page-header h1 { font-size: 2rem; }
+            .footer-links { justify-content: flex-start; }
+        }
+    </style>
 </head>
 <body>
 
 <nav class="site-nav">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><i class="fa-solid fa-graduation-cap"></i> أكاديمية الأصول الرقمية</a>
-    <div class="nav-links">
-      <a href="index.html">الرئيسية</a>
-      <a href="simulator.html">محاكي النصب</a>
-      <a href="modules.html">المحاور التعليمية</a>
-      <a href="blog.html" class="active">المدونة</a>
-      <a href="join.html">انضم إلينا</a>
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo" aria-label="أكاديمية الأصول الرقمية الصفحة الرئيسية">
+            <i class="fa-solid fa-graduation-cap"></i> أكاديمية الأصول الرقمية
+        </a>
+        <div class="nav-links">
+            <a href="index.html">الرئيسية</a>
+            <a href="simulator.html">محاكي النصب</a>
+            <a href="modules.html">المحاور التعليمية</a>
+            <a href="blog.html" class="active">المدونة</a>
+            <a href="join.html">انضم إلينا</a>
+        </div>
+        <a href="join.html" class="nav-cta">ابدأ التعلم مجاناً</a>
     </div>
-    <a href="join.html" class="nav-cta">ابدأ التعلم</a>
-  </div>
 </nav>
 
-<div class="page-body">
+<main class="page-body">
 <div class="container">
 
     <div id="mainView">
-        <div class="page-header">
-            <h1><i class="fa-solid fa-newspaper"></i> المدونة والمعرفة الرقمية</h1>
-            <p>مقالات، تحليلات تقنية، وإرشادات عملية صممها خبراؤنا لمساعدتك على حماية أصولك الرقمية.</p>
-        </div>
+        <header class="page-header">
+            <h1><i class="fa-solid fa-newspaper" aria-hidden="true"></i> المدونة والمعرفة الرقمية للأمن المالي</h1>
+            <p>مستودع مقالات تحليلية متخصصة، وأبحاث فنية، وإرشادات أمنية تطبيقية لتفكيك سيكولوجيات الاحتيال وهندسة التلاعب بالعملات المشفرة.</p>
+        </header>
 
-        <div class="top-bar">
+        <div class="top-bar" role="search">
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="ابحث في المقالات..." oninput="filterArticles()" />
-                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="searchInput" placeholder="ابحث في عناوين ومحتوى المقالات..." oninput="filterArticles()" aria-label="البحث عن المقالات التعليمية" />
+                <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
             </div>
-            <span class="count-badge" id="countBadge">0 مقال</span>
+            <span class="count-badge" id="countBadge" aria-live="polite">0 مقال معروض</span>
         </div>
 
-        <div class="filters">
-            <button class="filter-pill active" onclick="setFilter('الكل', this)">كل المقالات</button>
-            <button class="filter-pill" onclick="setFilter('أمن سيبراني', this)">أمن سيبراني</button>
-            <button class="filter-pill" onclick="setFilter('هندسة اجتماعية', this)">هندسة اجتماعية</button>
-            <button class="filter-pill" onclick="setFilter('تحليلات تقنية', this)">تحليلات تقنية</button>
-            <button class="filter-pill" onclick="setFilter('توعية عامة', this)">توعية عامة</button>
+        <div class="filters" role="group" aria-label="فلترة المقالات حسب المحور المعرفي">
+            <button class="filter-pill active" onclick="setFilter('الكل', this)">كل المقالات المعرفية</button>
+            <button class="filter-pill" onclick="setFilter('أمن سيبراني', this)">الأمن السيبراني للويب 3</button>
+            <button class="filter-pill" onclick="setFilter('هندسة اجتماعية', this)">الهندسة الاجتماعية وسيكولوجية الاحتيال</button>
+            <button class="filter-pill" onclick="setFilter('تحليلات تقنية', this)">التحليلات البرمجية والفنية</button>
+            <button class="filter-pill" onclick="setFilter('توعية عامة', this)">التوعية المالية العامة</button>
         </div>
 
         <div class="blog-grid" id="blogGrid"></div>
     </div>
 
-    <div id="articleView" class="article-view">
-        <button class="back-btn" onclick="closeArticle()"><i class="fa-solid fa-arrow-right"></i> العودة للمدونة</button>
-        <div class="article-inner">
-            <div class="article-cat" id="artCat"></div>
+    <div id="articleView" class="article-view" role="dialog" aria-modal="true" aria-labelledby="artTitle">
+        <button class="back-btn" onclick="closeArticle()"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i> العودة لقائمة المدونة الرئيسية</button>
+        <article class="article-inner">
+            <span class="article-cat" id="artCat"></span>
             <h1 class="article-title" id="artTitle"></h1>
             <div class="article-meta" id="artMeta"></div>
             <div class="article-body" id="artBody"></div>
-        </div>
+        </article>
     </div>
 
 </div>
-</div>
+</main>
 
 <footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="footer-logo"><i class="fa-solid fa-graduation-cap"></i> أكاديمية الأصول الرقمية</div>
-      <p class="footer-desc">منصتك المعرفية الأولى لتفكيك فخاخ هندسة الإقناع وحماية أصولك الرقمية. جزء من المنظومة الرقمية المتكاملة 2026.</p>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <div class="footer-logo"><i class="fa-solid fa-graduation-cap"></i> أكاديمية الأصول الرقمية</div>
+            <p class="footer-desc">المنصة التعليمية والمعرفية المستقلة والأولى لتفكيك فخاخ التلاعب النفسي والهندسة الاجتماعية وحماية أصولك المشفرة واستثماراتك. شريك استراتيجي في المنظومة الأمنية المتكاملة لعام 2026.</p>
+        </div>
+        <div class="footer-links">
+            <nav class="link-group" aria-label="روابط الأكاديمية">
+                <div class="group-title">الأكاديمية</div>
+                <ul>
+                    <li><a href="modules.html">المحاور التعليمية</a></li>
+                    <li><a href="simulator.html">محاكي النصب</a></li>
+                    <li><a href="blog.html">المدونة المعرفية</a></li>
+                </ul>
+            </nav>
+            <nav class="link-group" aria-label="روابط الشركاء">
+                <div class="group-title">المنظومة الرقمية الشريكة</div>
+                <ul>
+                    <li><a href="https://verification-hub.net" target="_blank" rel="noopener">مركز التحقق الشامل</a></li>
+                    <li><a href="https://verification-hub.net/ecosystem.html" target="_blank" rel="noopener">مبادرة درع المستثمر</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
-    <div class="footer-links">
-      <div class="link-group"><div class="group-title">الأكاديمية</div><ul>
-        <li><a href="modules.html">المحاور التعليمية</a></li>
-        <li><a href="simulator.html">محاكي النصب</a></li>
-        <li><a href="blog.html">المدونة</a></li>
-      </ul></div>
-      <div class="link-group"><div class="group-title">المنظومة الرقمية</div><ul>
-        <li><a href="https://verification-hub.net" target="_blank">مركز التحقق</a></li>
-        <li><a href="https://verification-hub.net/ecosystem.html" target="_blank">درع المستثمر</a></li>
-      </ul></div>
+    <div class="footer-bottom">
+        <span>© 2026 جميع الحقوق محفوظة — أكاديمية الأصول الرقمية (Digital Assets Academy)</span>
+        <span class="footer-badge">🛡️ أمان الويب 3</span>
     </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2026 جميع الحقوق محفوظة — أكاديمية الأصول الرقمية</span>
-    <span class="footer-badge">Digital Assets Academy</span>
-  </div>
 </footer>
 
 <script>
@@ -174,131 +573,150 @@ const ARTICLES = [
     {
         title: "تشريح فخ الـ Approve: كيف يتم سحب أصولك المشفرة دون علمك؟",
         category: "أمن سيبراني", date: "٣ يونيو ٢٠٢٦", read: "٥ دقائق",
-        excerpt: "نتعمق في الجانب التقني للعقود الذكية المخادعة، وكيف يستغل المخترقون صلاحيات التوقيع لتفريغ المحفظة الرقمية بالكامل.",
-        body: `<p>في فضاء العملات الرقمية والتمويل اللامركزي (DeFi)، تكمن القوة في العقود الذكية. لكن هذه القوة قد تتحول إلى سلاح فتاك إذا أُسيء استخدامها.</p>
-<h3>ما هي خاصية الـ Approve برمجياً؟</h3>
-<p>عندما تتداولين على منصة لامركزية، يطلب منك الموقع توقيع معاملة تمنح العقد الذكي صلاحية الوصول إلى عملاتك. المشكلة تبدأ عندما تطلب منصات الاحتيال صلاحية "غير محدودة".</p>
-<div class="highlight">"بمجرد ضغطك على Approve في المواقع المشبوهة، أنتِ تعطين المخترق المفتاح القانوني لسحب أصولك في أي وقت."</div>
-<h3>كيف تحمين محفظتك؟</h3>
-<p>١. لا توافقي أبداً على Approve في موقع لا تثقين به ١٠٠٪.<br>٢. راجعي تفاصيل المعاملة وحددي سقفاً مخصصاً (Custom Spending Limit).<br>٣. استخدمي مواقع مثل Revoke.cash لإلغاء الصلاحيات القديمة دورياً.</p>`
+        excerpt: "نتعمق في الجانب التقني للعقود الذكية المخادعة، وكيف يستغل المخترقون صلاحيات التوقيع لتفريغ المحفظة الرقمية بالكامل في فضاء التمويل اللامركزي.",
+        body: `<p>في فضاء العملات الرقمية والتمويل اللامركزي (DeFi)، تكمن القوة المطلقة في العقود الذكية الجارية على السلسلة. لكن هذه القوة التقنية قد تتحول فجأة إلى سلاح برمي فتاك ومدمر لأموالك إذا أُسيء استخدامها أو تم التوقيع عليها دون وعي مسبق بكود التفويض المصدري.</p>
+<h3>ما هي خاصية الـ Approve برمجياً في المحافظ؟</h3>
+<p>عندما تقومين بإجراء تداول أو مبادلة أصول عبر منصة لامركزية، يطلب منك الموقع الذكي توقيع معاملة مشفرة تمنح هذا العقد صلاحية الوصول لعملاتك المخزنة. تكمن الثغرة والمصيدة الحقيقية عندما تطلب منصات الاحتيال وشبكات الهندسة الملتفة منح صلاحية "غير محدودة - Unlimited Approval".</p>
+<div class="highlight">"بمجرد ضغطكِ الفوري على وسم Approve في المواقع والروابط المشبوهة، أنتِ تمنحين المطور والمخترق المفتاح القانوني والبرمجي لسحب كامل أصول المحفظة وتفريغها في أي وقت دون إذن إضافي."</div>
+<h3>بروتوكول الوقاية: كيف تحمين محفظتك اللامركزية؟</h3>
+<p><strong>١. حظر التوقيع الأعمى (Blind Signing):</strong> لا توافقي أبداً على بروتوكولات Approve في أي منصة لم يتم فحص وثوقيتها ومراجعتها يدوياً وتقنياً ١٠٠٪.<br><strong>٢. وضع سقف الصرف المخصص:</strong> راجعي تفاصيل المعاملة بدقة عبر المحفظة وحددي يدوياً سقفاً مخصصاً (Custom Spending Limit) يتناسب مع المعاملة اللحظية فقط بدلاً من الحد الأقصى المطلق.<br><strong>٣. المراجعة الدورية للصلاحيات:</strong> استخدمي أدوات الفحص والأمان المعتمدة دولياً مثل Revoke.cash لإلغاء وتطهير الصلاحيات القديمة الممنوحة للمنصات بشكل دوري مستمر.</p>`
     },
     {
         title: "سيكولوجية الاحتيال: لماذا نقع في فخ الاستعجال وفرص العمر؟",
         category: "هندسة اجتماعية", date: "١ يونيو ٢٠٢٦", read: "٤ دقائق",
-        excerpt: "تحليل نفسي ومجتمعي للأساليب التي يستخدمها النصابون الرقميون للتلاعب بقرارات الضحايا باستخدام ضغط الوقت ووهم النخبوية.",
-        body: `<p>الاحتيال الرقمي ليس مجرد شفرات خبيثة، بل هو تلاعب نفسي متقن يستهدف نقاط الضعف البشرية الأساسية: الطمع، والخوف من ضياع الفرص (FOMO).</p>
-<h3>وهم الاستعجال وضغط الوقت</h3>
-<p>تعتمد 90% من حملات النصب على مبدأ "العرض سينتهي خلال ساعتين!". هذا الضغط الزمني المصطنع مصمم لإيقاف الجزء العقلاني في دماغ الضحية وإجبارها على قرار عاطفي سريع.</p>
-<div class="highlight">"المحتال المحترف لا يقنعك بجودة مشروعه، بل يقنعك بأنك ستندمين طوال حياتك إن لم تحولي أموالك الآن."</div>
-<h3>أقنعة النخبوية والجروبات المغلقة</h3>
-<p>أسلوب شائع على تليجرام حيث يتم إيهام الضحية بأنها اختيرت للانضمام إلى "مجموعة VIP سرية". تعزيز شعور الأهمية يجعلها تثق بمديرين وهميين وتودع أصولها في منصات غير مرخصة.</p>`
+        excerpt: "تحليل نفسي ومجتمعي تخصصي للأساليب السلوكية التي يستخدمها النصابون الرقميون للتلاعب بقرارات الضحايا الحساسة باستخدام ضغط الوقت ومصيدة الـ FOMO.",
+        body: `<p>الاحتيال الرقمي ليس مجرد شفرات برمجية خبيثة وهجمات سيبرانية معقدة، بل هو في المقام الأول تلاعب نفسي سلوكي متقن يستهدف بعناية بالغة نقاط الضعف البشرية الفطرية: الرغبة في الكسب السريع، الاندفاع، والخوف من ضياع الفرص الثمينة وعوائد الاستثمار النخبوية والذي يُعرف بمصطلح <strong>(FOMO)</strong>.</p>
+<h3>وهم الاستعجال المصطنع وضغط الوقت</h3>
+<p>تعتمد أكثر من 90% من حملات وشبكات النصب المالي المبرمجة على مبدأ "الفرصة محدودة والعرض سينتهي تماماً خلال ساعتين!". هذا الضغط الزمني القاسي والمفتعل مصمم بشكل علمي لإيقاف التفكير العقلاني المنطقي في دماغ الضحية، وجرّها مرغمة وبسرعة إلى اتخاذ قرار مالي عاطفي سريع لإنقاذ الفرصة الوهمية.</p>
+<div class="highlight">"المحتال المحترف والمنتحر لصفة المستشار المالي لا يقنعك بجودة مشروعه، بل يبرع في إقناعك بأنك ستندمين طوال حياتك المادية إن لم تقومي بتحويل أموالك وأصولك الرقمية الآن فوراً."</div>
+<h3>أقنعة النخبوية ومجموعات الـ VIP المغلقة</h3>
+<p>يتزايد أسلوب الخداع هذا بكثافة على تطبيقات المحادثة مثل تليجرام، حيث يتم إيهام الضحية باختيارها الفريد للانضمام إلى "مجموعة قنوات VIP سرية ومغلقة". هذا التعزيز المفتعل لشعور الأهمية والتميز يجعل الضحية تقع تدريجياً في مصيدة الثقة بمديرين ومستشارين وهميين وتقوم بإيداع مدخراتها في كيانات منصات تداول غير مرخصة سيادياً.</p>`
     },
     {
         title: "دليلك الكامل للتحقق من تراخيص شركات الاستثمار الدولية",
         category: "تحليلات تقنية", date: "٢٨ مايو ٢٠٢٦", read: "٦ دقائق",
-        excerpt: "خطوات عملية لفحص الهيئات الرقابية الحقيقية مثل الـ FCA البريطانية وتجنب الشركات الوهمية المسجلة في مناطق الأوفشور.",
-        body: `<p>تنتشر آلاف الإعلانات لشركات تدعي أنها مرخصة دولياً وتضمن أرباحاً خيالية. في هذا الدليل نكشف طرق فحص هذه التراخيص بنفسك.</p>
-<h3>الفرق بين التراخيص الحقيقية والأوفشور</h3>
-<p>الشركات الوهمية غالباً مسجلة في مناطق مثل سانت فينسنت أو فانواتو. هذا التسجيل مجرد "رخصة تجارية عامة" لا تحمي أموال المستثمر ولا تفرض أي رقابة مالية.</p>
-<div class="highlight">"الترخيص الحقيقي يصدر من هيئات رقابية صارمة تضمن تعويض المستثمرين في حال إفلاس الشركة."</div>
-<h3>أقوى ٣ هيئات رقابية عالمية</h3>
-<p><strong>FCA البريطانية:</strong> الأقوى عالمياً — تحققي عبر fca.org.uk<br><strong>ASIC الأسترالية:</strong> حماية صارمة لمستثمري التجزئة.<br><strong>DFSA دبي:</strong> المرجع للشرق الأوسط والمنطقة العربية.</p>`
+        excerpt: "خطوات عملية رصينة لفحص الهيئات الرقابية السيادية الحقيقية مثل الـ FCA البريطانية وكشف زيف الشركات الوهمية المسجلة في ملاذات الأوفشور.",
+        body: `<p>تزدحم الفضاءات الرقمية بآلاف الإعلانات الممولة لشركات تداول ووساطة تدعي كذباً وجهراً أنها مرخصة دولياً وخاضعة للرقابة الصارمة لتضمن للمستثمر أرباحاً خيالية وثابتة. في هذا الدليل التدريبي، نكشف الآليات العملية لفحص ومراجعة هذه التراخيص يدوياً وبنفسك لحماية رأس مالك.</p>
+<h3>الفجوة العميقة بين التراخيص السيادية والأوفشور</h3>
+<p>الشركات والكيانات الوهمية غالباً ما تلجأ للاستعراض بشهادات تسجيل صادرة من جزر ومناطق نائية تسمى "الأوفشور - Offshore" مثل جزر سانت فينسنت، غيانا، أو فانواتو. هذا النوع من التسجيل هو مجرد "رخصة تجارية عامة" رخيصة السعر ولا يمثل أي حماية قانونية لأموال المستثمر، ولا يفرض أي قيود رقابية أو تدقيق مالي على سلوك الشركة.</p>
+<div class="highlight">"الترخيص التنظيمي الحقيقي والصارم يصدر فقط من هيئات سيادية قوية تمتلك سلطة قانونية كاملة لفرض العقوبات، حماية المستهلك، وتأمين تعويض المستثمرين في حال تعثر أو إفلاس الشركة المالي."</div>
+<h3>أقوى ٣ هيئات رقابية عالمية معتمدة</h3>
+<p><strong>١. سلطة السلوك المالي البريطانية (FCA):</strong> وتعتبر الكيان الأقوى والأشد صرامة على مستوى العالم — تحققي دائماً من سجلات الشركات عبر موقعهم الرسمي fca.org.uk.<br><strong>٢. الهيئة الأسترالية للأوراق المالية والاستثمارات (ASIC):</strong> توفر أطر حماية صارمة وشاملة لحسابات ومستثمري التجزئة.<br><strong>٣. سلطة دبي للخدمات المالية (DFSA):</strong> المرجع التنظيمي الرصيد والأقوى لمنطقة الشرق الأوسط والوطن العربي ككل.</p>`
     },
     {
         title: "محفظتك ليست بنكاً: لماذا لا يمكن استرداد العملات المشفرة المسروقة؟",
         category: "توعية عامة", date: "٢٥ مايو ٢٠٢٦", read: "٥ دقائق",
-        excerpt: "فهم الفرق الجوهري بين النظام المصرفي التقليدي والعملات المشفرة، ولماذا لا توجد 'استعادة أموال' في عالم البلوكشين.",
-        body: `<p>أحد أكبر سوء الفهم لدى المستخدمين الجدد هو توقع أن العملات المشفرة تعمل مثل الحسابات البنكية التقليدية، حيث يمكن للبنك تجميد معاملة أو استرداد أموال مسروقة.</p>
-<h3>اللامركزية: قوة وضعف في نفس الوقت</h3>
-<p>البلوكشين مصمم ليكون "غير قابل للعكس" (Irreversible). بمجرد تأكيد المعاملة على الشبكة، لا توجد سلطة مركزية — لا بنك ولا حكومة — يمكنها التراجع عنها.</p>
-<div class="highlight">"في عالم الكريبتو، أنتِ المسؤول الوحيد عن أمان أموالك. لا يوجد رقم هاتف لخدمة العملاء يمكنه إرجاع أموالك المسروقة."</div>
-<h3>ماذا تفعلين إذا سُرقت أموالك؟</h3>
-<p>١. وثّقي كل التفاصيل: عنوان المحفظة، معرّف المعاملة (TXID)، والتواصل مع المحتال.<br>٢. أبلغي فوراً عبر منصات مثل "درع المستثمر" لتحذير المستثمرين الآخرين.<br>٣. تجنبي أي شخص يعرض "استرداد أموالك مقابل رسوم" — هذه عملية احتيال ثانية شائعة جداً.</p>`
+        excerpt: "فهم الفرق الجوهري والتقني بين النظام المصرفي التقليدي المركزي وبنية البلوكشين، ولماذا تغيب ميزة 'عكس المعاملات' في فضاء الكريبتو.",
+        body: `<p>من أبرز الأخطاء وسوء الفهم الشائع لدى المستخدمين والمستثمرين الجدد في الفضاء الرقمي هو التعامل مع المحافظ اللامركزية والعملات المشفرة بعقلية الحسابات البنكية التقليدية، متوقعين وجود جهة أو إدارة تستطيع ببساطة تجميد معاملة خاطئة، إلغاء أمر صرف، أو استرداد أموال مسروقة.</p>
+<h3>اللامركزية الصارمة: مواطن القوة ومخاطر غياب السلطة</h3>
+<p>بنية تكنولوجيا البلوكشين وسلاسل الكتل مصممة بشكل برمجي لتكون "غير قابلة للعكس أو التعديل - Irreversible". بمجرد تأكيد المعاملة المالية وإدراج كتلتها على الشبكة، تنعدم تماماً أي سلطة مركزية في العالم — سواء كانت بنكاً، شركة، أو حكومة — تمتلك القدرة التقنية على التراجع عنها أو تعديل مسار الحوالة.</p>
+<div class="highlight">"في فضاء الكريبتو والعملات الرقمية، أنتِ بمفردكِ المصرف والمسؤول المطلق والأول عن أمان وحراسة أموالك. لا يوجد رقم هاتف طوارئ لخدمة العملاء يمكنه إعادة الأصول المسروقة بعد حدوثها."</div>
+<h3>بروتوكول الطوارئ: ماذا تفعلين فوراً إذا واجهتِ اختراقاً؟</h3>
+<p><strong>١. التوثيق التقني الفوري:</strong> سارعي بجمع وتوثيق كافة المعطيات الفنية للحوالة؛ عناوين المحافظ المتورطة، ومعرّف المعاملة الفريد على السلسلة (TXID)، والاحتفاظ بلقطات الشاشة للمحادثات.<br><strong>٢. الرفع للمنظومات التشاركية:</strong> قومي بالإبلاغ السريع عبر منصات التوثيق المجتمعي مثل "درع المستثمر" لضمان أرشفة العناوين المشبوهة والتحذير الفوري لباقي أفراد المجتمع الاستثماري.<br><strong>٣. الحذر من فخاخ الاسترداد الوهمي:</strong> تجنبي تماماً الانصياع لأي حسابات أو كيانات تدعي كذباً القدرة على استرداد الأموال الرقمية مقابل رسوم مسبقة؛ فهذا هو نمط الاحتيال الثانوي الأكثر شيوعاً وخباثة واستغلالاً لظروف الضحايا.</p>`
     },
     {
         title: "كيف تكشفين موقعاً مزيفاً يحاكي منصة تداول حقيقية؟",
         category: "أمن سيبراني", date: "٢٠ مايو ٢٠٢٦", read: "٤ دقائق",
-        excerpt: "المحتالون ينشئون نسخاً طبق الأصل من مواقع شركات مرخصة (Clone Firms). تعلمي العلامات التقنية الصغيرة التي تفضح الموقع المزيف.",
-        body: `<p>من أخطر أساليب النصب الحديثة هو إنشاء "نسخة مطابقة" (Clone) لموقع شركة مالية مرخصة حقيقية، بفروقات طفيفة جداً قد لا تلاحظها العين غير المدربة.</p>
-<h3>فحص اسم النطاق (Domain) بدقة</h3>
-<p>غالباً يستخدم المحتالون نطاقات تشبه الأصل بحرف واحد مختلف، أو امتداد مختلف (.net بدل .com)، أو إضافة كلمة مثل "global" أو "official" لخداع الباحث السريع.</p>
-<div class="highlight">"قبل أن تثقي بأي موقع، اكتبي اسم النطاق بنفسك في المتصفح يدوياً، ولا تضغطي على روابط مرسلة عبر الشات أبداً."</div>
-<h3>علامات تقنية تفضح المواقع المزيفة</h3>
-<p>١. غياب شهادة الأمان (HTTPS) أو شهادة جديدة جداً عمرها أيام.<br>٢. أخطاء لغوية أو ترجمة ركيكة في المحتوى الرسمي.<br>٣. معلومات الاتصال غامضة أو تؤدي إلى تطبيقات شات غير رسمية فقط (واتساب/تليجرام) دون بريد رسمي للشركة.</p>`
+        excerpt: "تكتيكات متطورة لإنشاء نسخ طبق الأصل من مواقع شركات الوساطة المرخصة (Clone Firms). تعلمي العلامات الفنية الدقيقة التي تكشف التزييف.",
+        body: `<p>من أحدث وأخطر أساليب النصب السيبراني المتبعة مؤخراً هو ما يُعرف بإنشاء "الشركات والمواقع المستنسخة (Clone Firms)". حيث يعمد المحتالون لبناء تصميم ونسخة مطابقة ومطورة لصفحات ومواقع شركات مالية حقيقية ومرخصة، بفروقات حرفية وتقنية طفيفة جداً تصعب ملاحظتها بالعين العادية غير الخبيرة.</p>
+<h3>الفحص الدقيق لاسم النطاق (Domain Name)</h3>
+<p>يلجأ النصابون لشراء نطاقات قريبة جداً من اسم النطاق الأصلي بفارق حرف واحد مخفي، أو يعتمدون امتداداً جغرافياً أو تجارياً مغايراً (مثل استخدام امتداد .net أو .co بدلاً من الامتداد الأصلي .com)، أو يقومون بحشو كلمات خادعة مثل "global"، "official"، أو "hub" لإضفاء صفة الرسمية الكاذبة وتضليل الباحث السريع.</p>
+<div class="highlight">"قبل وضع أي بيانات شخصية أو ربط محفظتك الرقمية، اكتب اسم النطاق للشركة بيدك يدوياً داخل المتصفح، واحذر تماماً من فتح روابط المنصات المرسلة إليك عبر غرف الشات ومجموعات التليجرام."</div>
+<h3>العلامات الفنية والدلالية الثلاث الفاضحة للتزوير</h3>
+<p><strong>١. شهادة الأمان وعمر النطاق:</strong> غياب بروتوكول التشفير الآمن (HTTPS) أو اكتشاف أن عمر شهادة الأمان والنطاق حديث جداً (عمره أيام أو أسابيع قليلة فقط) عبر أدوات Whois.<br><strong>٢. ركاكة المحتوى والترجمة الإملائية:</strong> وجود أخطاء لغوية فادحة، أو صياغات ترجمة آلية ركيكة في الصفحات الداخلية للموقع واستمارات التسجيل.<br><strong>٣. غموض قنوات الدعم والاتصال:</strong> انعدام وجود بريد إلكتروني رسمي يحمل اسم نطاق الشركة، والاعتماد المطلق والوحيد على تحويل المستخدمين لتطبيقات الشات الشخصية وغير الرسمية (مثل واتساب وتليجرام) لإتمام الصفقات وتلقي الأموال المادية.</p>`
     },
     {
         title: "عقود السمارت كونتراكت المفخخة: علامات يجب أن تنتبهي لها قبل التفاعل",
         category: "تحليلات تقنية", date: "١٥ مايو ٢٠٢٦", read: "٧ دقائق",
-        excerpt: "ليس كل عقد ذكي بريئاً. نشرح أشهر أنواع العقود المبرمجة خصيصاً لخداع المستخدمين وكيف تتجنبينها قبل ربط محفظتك.",
-        body: `<p>العقود الذكية هي برامج تعمل تلقائياً على البلوكشين، وقوتها تكمن في أنها "غير قابلة للتعديل" بعد نشرها. هذه الخاصية بالذات يستغلها المحتالون لزرع فخاخ دائمة.</p>
-<h3>عقود "Honeypot" — يمكنك الشراء ولكن لا يمكنك البيع</h3>
-<p>نوع شائع من العملات المزيفة حيث يُسمح للمستخدم بشراء التوكن بسهولة، لكن الكود البرمجي يحتوي على شرط خفي يمنع عملية البيع لاحقاً إلا لعنوان محفظة المطور نفسه.</p>
-<div class="highlight">"إذا وجدتِ عملة جديدة ترتفع بسرعة جنونية وسيولة ضخمة فجأة، تحققي أولاً: هل يمكن لأي شخص آخر البيع بالفعل؟"</div>
-<h3>كيف تتحققين قبل التفاعل مع أي عقد؟</h3>
-<p>١. استخدمي أدوات فحص العقود المجانية المتوفرة على مستكشفات البلوكشين لمراجعة الكود المصدري.<br>٢. تحققي من نسبة توزيع التوكنات — إذا كان معظمها بيد محفظة واحدة، فهذا مؤشر خطر كبير.<br>٣. لا تتفاعلي مع عقود حديثة جداً (أقل من أسابيع) دون مراجعة مستقلة من مصادر تقنية موثوقة.</p>`
+        excerpt: "شرح معمق لكيفية قراءة وفحص كود العقود الذكية على الشبكة واكتشاف فخاخ الـ Honeypot المبرمجة لمنع عمليات بيع الأصول والتوكنات.",
+        body: `<p>العقود الذكية (Smart Contracts) هي برمجيات رقمية دقيقة تعمل وتنفذ ذاتياً وبشكل تلقائي على شبكات البلوكشين المختلفة، وتستمد قوتها المطلقة من ميزة أنها "غير قابلة للتعديل أو الإلغاء" بمجرد نشرها على السلسلة. هذه الخاصية الحتمية بالذات يستغلها المحتالون بشكل خبيث لزرع فخاخ برمجية دائمة لا يمكن التراجع عنها وتستهدف ودائع المستخدمين.</p>
+<h3>عقود "Honeypot" — مصيدة الشراء السهل وحظر البيع</h3>
+<p>تعتبر هذه المصيدة النمط الأكثر انتشاراً وخباثة في العملات الرقمية الجديدة والمزيفة؛ حيث يسمح الكود المصدري للعقد الذكي لأي مستخدم بشراء التوكن أو العملة بكل سهولة وبأقل عمولة ممكنة لرفع حجم السيولة والمخططات البيانية فجأة، لكن الشفرة الداخلية للعقد تحتوي على شرط وميزة برمجية مخفية تمنع بشكل قاطع أي عنوان محفظة من إجراء عملية "البيع - Sell" باستثناء عنوان محفظة المطور والمحتال نفسه.</p>
+<div class="highlight">"إذا رصدتِ عملة رقمية ناشئة تسجل ارتفاعات سعرية جنونية وفلكية في وقت قصير مع تدفق سيولة ضخم، فتوقفي فوراً وتحققي عبر مستكشف الكتلة: هل هناك عناوين محافظ أخرى مستقلة قادرة على البيع الفعلي وجني الأرباح على السلسلة؟"</div>
+<h3>بروتوكول التحقق الفني قبل ربط وتدشين المعاملات</h3>
+<p><strong>١. أدوات الفحص التلقائي والمستكشفات:</strong> استفيدي من برمجيات وأدوات فحص العقود المفتوحة والمجانية المتوفرة على مستكشفات الكتل (مثل Etherscan أو BscScan) لمراجعة الأكواد ومطابقتها للتأكد من خلوها من شروط تجميد السيولة.<br><strong>٢. تحليل نسبة توزيع التوكنات (Token Allocation):</strong> تحققي بدقة من خريطة توزيع وتخزين العملة؛ إذا كانت النسبة العظمى والأكبر من العملات محتكرة ومخزنة بيد عنوان محفظة واحد أو عنوانين بدون تجميد حقيقي، فهذا مؤشر خطر داهم يمهد لعملية سحب سيولة وشيكة (Rug Pull).<br><strong>٣. تجنب العقود الناشئة مجهولة الهوية:</strong> احظري التفاعل البرمجي الشامل مع أي عقود ومنصات حديثة النشر على السلسلة (عمرها أقل من عدة أسابيع) ما لم تكن خاضعة لمراجعات وتدقيق أمني مستقل (Security Audits) من جهات برمجية معترف بها.</p>`
     }
 ];
 
+// دالة عرض وشبكة المقالات المتطورة
 function renderGrid() {
     const q = document.getElementById('searchInput').value.trim().toLowerCase();
     const grid = document.getElementById('blogGrid');
+    
+    // الفلترة والربط التزامني المتطور بين محرك البحث والكبسولات
     const filtered = allArticles.filter(a => {
         const matchCat = currentFilter === 'الكل' || a.category === currentFilter;
-        const matchQ = !q || a.title.toLowerCase().includes(q) || a.excerpt.toLowerCase().includes(q);
+        const matchQ = !q || a.title.toLowerCase().includes(q) || a.excerpt.toLowerCase().includes(q) || a.body.toLowerCase().includes(q);
         return matchCat && matchQ;
     });
 
     grid.innerHTML = "";
     if (filtered.length === 0) {
-        grid.innerHTML = `<div class="empty-state"><i class="fa-solid fa-circle-exclamation"></i>لا توجد مقالات تطابق بحثك</div>`;
+        grid.innerHTML = `<div class="empty-state"><i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>عذراً، لا توجد مقالات توعوية أو تحليلات تطابق معايير بحثك الحالي.</div>`;
     } else {
         filtered.forEach(a => {
             const idx = allArticles.indexOf(a);
             grid.insertAdjacentHTML('beforeend', `
-            <article class="blog-card" onclick="openArticle(${idx})">
+            <article class="blog-card" onclick="openArticle(${idx})" role="button" tabIndex="0" aria-label="مقالة بعنوان: ${a.title}. تصنيف: ${a.category}. وقت القراءة: ${a.read}">
                 <span class="card-cat">${a.category}</span>
                 <h2 class="card-title">${a.title}</h2>
                 <p class="card-excerpt">${a.excerpt}</p>
                 <div class="card-meta">
-                    <span><i class="fa-regular fa-calendar"></i>${a.date}</span>
-                    <span><i class="fa-regular fa-clock"></i>${a.read} قراءة</span>
+                    <span><i class="fa-regular fa-calendar" aria-hidden="true"></i>${a.date}</span>
+                    <span><i class="fa-regular fa-clock" aria-hidden="true"></i>وقت القراءة: ${a.read}</span>
                 </div>
-                <span class="read-link">اقرأ المقال كاملاً <i class="fa-solid fa-arrow-left"></i></span>
+                <span class="read-link">اقرأ التحليل والمقال كاملاً <i class="fa-solid fa-arrow-left" aria-hidden="true"></i></span>
             </article>`);
         });
     }
-    document.getElementById('countBadge').textContent = allArticles.length + ' مقال';
+    // إصلاح وعرض العداد ديناميكياً ليعكس عدد المقالات المعروضة الفعلي أمام المستخدم
+    document.getElementById('countBadge').textContent = filtered.length + ' مقال معروض حالياً';
 }
 
+// دالة تفعيل كبسولات الفلترة والتصنيف
 function setFilter(cat, el) {
     currentFilter = cat;
-    document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.filter-pill').forEach(p => {
+        p.classList.remove('active');
+        p.setAttribute('aria-pressed', 'false');
+    });
     el.classList.add('active');
+    el.setAttribute('aria-pressed', 'true');
     renderGrid();
 }
 
 function filterArticles() { renderGrid(); }
 
+// دالة فتح وعرض المقال التخصصي الكامل بالانتقال السلس
 function openArticle(idx) {
     const a = allArticles[idx];
     if (!a) return;
     document.getElementById('artCat').textContent = a.category;
     document.getElementById('artTitle').textContent = a.title;
     document.getElementById('artMeta').innerHTML = `
-        <span><i class="fa-regular fa-calendar"></i>${a.date}</span>
-        <span><i class="fa-regular fa-clock"></i>وقت القراءة: ${a.read}</span>`;
+        <span><i class="fa-regular fa-calendar" aria-hidden="true"></i>تاريخ النشر: ${a.date}</span>
+        <span><i class="fa-regular fa-clock" aria-hidden="true"></i>تقدير وقت القراءة: ${a.read}</span>`;
     document.getElementById('artBody').innerHTML = a.body;
+    
     document.getElementById('mainView').style.display = 'none';
-    document.getElementById('articleView').style.display = 'block';
+    const artView = document.getElementById('articleView');
+    artView.style.display = 'block';
+    artView.setAttribute('aria-hidden', 'false');
+    
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// دالة إغلاق المقال والعودة السلسة للمدونة
 function closeArticle() {
-    document.getElementById('articleView').style.display = 'none';
+    const artView = document.getElementById('articleView');
+    artView.style.display = 'none';
+    artView.setAttribute('aria-hidden', 'true');
     document.getElementById('mainView').style.display = 'block';
+    
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+// تدشين وتحميل البيانات عند إقلاع الصفحة
 window.onload = () => {
     allArticles = [...ARTICLES];
     renderGrid();
