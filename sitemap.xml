@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- الصفحة الرئيسية -->
+  <url>
+    <loc>https://majdabdelaziz.github.io/digital-assets-academy/index.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- صفحة المحاور التعليمية الرئيسية -->
+  <url>
+    <loc>https://majdabdelaziz.github.io/digital-assets-academy/modules.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- المحور الأول: هندسة الإقناع -->
+  <url>
+    <loc>https://majdabdelaziz.github.io/digital-assets-academy/modules/persuasion.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- المحور الثاني: أساسيات البلوكشين -->
+  <url>
+    <loc>https://majdabdelaziz.github.io/digital-assets-academy/modules/blockchain.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- المحور الثالث: تأمين المحافظ -->
+  <url>
+    <loc>https://majdabdelaziz.github.io/digital-assets-academy/modules/wallets.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- المحور الرابع: التشريعات الدولية -->
+  <url>
+    <loc>https://majdabdelaziz.github.io/digital-assets-academy/modules/regulations.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- محاكي النصب -->
+  <url>
+    <loc>https://majdabdelaziz.github.io/digital-assets-academy/simulator.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- المدونة -->
+  <url>
+    <loc>https://majdabdelaziz.github.io/digital-assets-academy/blog.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- صفحة انضم إلينا -->
+  <url>
+    <loc>https://majdabdelaziz.github.io/digital-assets-academy/join.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+</urlset>
