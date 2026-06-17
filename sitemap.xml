@@ -1,73 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
-  <!-- الصفحة الرئيسية -->
   <url>
-    <loc>https://digital-assets-academy.com/index.html</loc>
+    <loc>https://digital-assets-academy.com/</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.00</priority>
   </url>
 
-  <!-- صفحة المحاور التعليمية الرئيسية -->
   <url>
-    <loc>https://digital-assets-academy.com/modules.html</loc>
+    <loc>https://digital-assets-academy.com/modules</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
 
-  <!-- المحور الأول: هندسة الإقناع -->
   <url>
-    <loc>https://digital-assets-academy.com/modules/persuasion.html</loc>
+    <loc>https://digital-assets-academy.com/modules/persuasion</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
-  <!-- المحور الثاني: أساسيات البلوكشين -->
   <url>
-    <loc>https://digital-assets-academy.com/modules/blockchain.html</loc>
+    <loc>https://digital-assets-academy.com/modules/blockchain</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
-  <!-- المحور الثالث: تأمين المحافظ -->
   <url>
-    <loc>https://digital-assets-academy.com/modules/wallets.html</loc>
+    <loc>https://digital-assets-academy.com/modules/wallets</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
-  <!-- المحور الرابع: التشريعات الدولية -->
   <url>
-    <loc>https://digital-assets-academy.com/modules/regulations.html</loc>
+    <loc>https://digital-assets-academy.com/modules/regulations</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
 
-  <!-- محاكي النصب -->
   <url>
-    <loc>https://digital-assets-academy.com/simulator.html</loc>
+    <loc>https://digital-assets-academy.com/simulator</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
 
-  <!-- المدونة -->
   <url>
-    <loc>https://digital-assets-academy.com/blog.html</loc>
+    <loc>https://digital-assets-academy.com/blog</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.70</priority>
   </url>
 
-  <!-- صفحة انضم إلينا -->
   <url>
-    <loc>https://digital-assets-academy.com/join.html</loc>
+    <loc>https://digital-assets-academy.com/join</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.50</priority>
